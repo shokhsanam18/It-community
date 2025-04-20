@@ -1,10 +1,20 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Welcome from "./screens/Welcome";
+import Rules from "./screens/Rules";
+import Game from "./screens/Game";
+import Final from "./screens/Final";
 
 function App() {
   return (
-    <>
-      <h1 className="bg-pink-600 text-white">hello world</h1>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/rules" element={<Rules />} />
+        <Route path="/game" element={<Game />} />
+        <Route path="/final" element={<Final />} />
+      </Routes>
+    </Router>
   );
 }
 
