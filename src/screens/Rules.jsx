@@ -1,30 +1,58 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import MusicToggle from "../components/MusicToggle";
 
 export default function Rules() {
-  const { state } = useLocation();
-  const name = state?.name || "Volunteer";
-  const navigate = useNavigate();
+    const { state } = useLocation();
+    const name = state?.name || "Volunteer";
+    const navigate = useNavigate();
+  
 
   return (
-    <div className="min-h-screen bg-white text-center flex flex-col items-center justify-center px-6 py-10">
-      <img src="/logo.png" alt="IT Community Logo" className="w-20 mb-4" />
-      <h2 className="text-2xl font-bold text-green-700 mb-4">Community Guidelines</h2>
-      <p className="text-gray-700 mb-6">These values define who we are. Read them carefully before starting.</p>
+    <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] px-4 py-8 relative flex flex-col items-center">
+      
 
-      <div className="bg-gray-100 p-4 rounded shadow w-full max-w-lg text-left mb-6 max-h-96 overflow-y-auto">
-        <ul className="list-disc list-inside space-y-3 text-gray-700">
-          <li><strong>Respect:</strong> Be kind and inclusive.</li>
-          <li><strong>Discipline:</strong> Be on time. 15 minutes early is on time.</li>
-          <li><strong>Humility:</strong> Stay curious and open to learn.</li>
-          <li><strong>Relevance:</strong> Keep the community discussions focused.</li>
-          <li><strong>Fun:</strong> Don't forget to enjoy the process 😊</li>
+      {/* Music Toggle */}
+      <MusicToggle />
+
+      {/* Logo in top-left */}
+      <img
+        src="/logo.png"
+        alt="IT Community Logo"
+        className="absolute top-4 left-4 w-44"
+      />
+
+      {/* Headline */}
+      <h2 className="text-3xl font-semibold text-gray-800 mt-20 text-center">
+        Community Guidelines & <span className="text-[#77c042]">Onboarding</span>
+      </h2>
+
+      {/* Info Panel */}
+      <div className="bg-white rounded-xl shadow-lg mt-6 p-6 w-full max-w-2xl text-gray-700">
+        <ul className="list-disc list-inside space-y-3 text-left leading-relaxed">
+          <li>
+            <span className="text-[#77c042] font-semibold">Respect:</span> Be kind, inclusive, and supportive.
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Discipline:</span> Always be on time (15 minutes early is ideal).
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Humility:</span> Be open to learning and improving.
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Relevance:</span> Keep your communication focused and meaningful.
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Fun:</span> Stay playful and enjoy your journey! 😊
+          </li>
         </ul>
       </div>
 
+      {/* Start Quest Button */}
       <button
         onClick={() => navigate("/game", { state: { name } })}
-        className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition"
+        className="mt-6 px-6 py-3 rounded-full font-medium text-white shadow-md bg-[#77c042] hover:bg-[#5cb452] transition"
       >
         Start Quest
       </button>

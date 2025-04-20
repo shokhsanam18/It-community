@@ -4,10 +4,14 @@ import Welcome from "./screens/Welcome";
 import Rules from "./screens/Rules";
 import Game from "./screens/Game";
 import Final from "./screens/Final";
+import AudioPlayer from "./components/AudioPlayer";
 
 function App() {
   return (
     <Router>
+      {/* AudioPlayer is mounted ONCE, above all routes */}
+      <AudioPlayer />
+
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/rules" element={<Rules />} />

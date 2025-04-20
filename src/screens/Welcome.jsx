@@ -1,38 +1,60 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import { useAudioStore } from "../store/useAudioStore";
+import MusicToggle from "../components/MusicToggle";
 
 export default function Welcome() {
-  const [name, setName] = useState("");
-  const navigate = useNavigate();
-
-  const handleStart = () => {
-    if (name.trim()) {
-      navigate("/rules", { state: { name } });
-    }
-  };
-
+    const [name, setName] = useState("");
+    const navigate = useNavigate();
+    const { setMusicPlaying } = useAudioStore();
+  
+    const handleStart = () => {
+      if (name.trim()) {
+        navigate("/rules", { state: { name } });
+      }
+    };
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-100 to-white flex flex-col items-center justify-center px-4 text-center">
-      <img src="./logo.png" alt="IT Community Logo" className="w-24 mb-4" />
-      <h1 className="text-3xl font-bold text-green-700 mb-2">Welcome to Commventure</h1>
-      <p className="text-gray-700 mb-6">Your journey to join the IT Community begins here. Enter your name to start!</p>
+    <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] flex flex-col items-center justify-center px-4 text-center relative">
+      
 
+{/* Music Toggle */}
+        <MusicToggle />
+
+      {/* Logo */}
+      <img src="/logo.png" alt="IT Community Logo" className="w-44 mb-3" />
+
+      {/* Headline */}
+      <h1 className="text-3xl font-semibold text-gray-800 mb-4">
+        Welcome to <span className="text-[#77c042]">Commventure!</span>
+      </h1>
+
+      {/* Input Field */}
       <input
         type="text"
-        placeholder="Full Name"
+        placeholder="First & Last Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="border border-gray-300 rounded px-4 py-2 w-full max-w-xs mb-4"
+        className="border border-gray-300 rounded-full px-5 py-3 w-full max-w-xs text-gray-800 mb-4 shadow-sm focus:ring-2 focus:ring-[#5cb452] outline-none"
       />
 
+      {/* Start Game Button */}
       <button
         onClick={handleStart}
         disabled={!name.trim()}
-        className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition"
+        className={`px-6 py-3 rounded-full font-medium text-white shadow-md transition ${
+          name.trim()
+            ? "bg-[#77c042] hover:bg-[#5cb452]"
+            : "bg-[#828583] cursor-not-allowed"
+        }`}
       >
         Start Game
       </button>
+
+      {/* Instructions */}
+      <p className="text-sm text-gray-500 mt-4 max-w-xs">
+        Enter your name and begin your onboarding journey!
+      </p>
     </div>
   );
 }
