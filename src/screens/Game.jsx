@@ -25,15 +25,26 @@ export default function Game() {
 
       <main className="flex-1 flex items-center justify-center p-6">
         <div className="bg-white p-6 rounded shadow-lg w-full max-w-md text-center">
-          <h3 className="text-lg font-semibold mb-4">What’s our community motto?</h3>
+          <h3 className="text-lg font-semibold mb-4">
+            What’s our community motto?
+          </h3>
           <div className="space-y-3">
-            <button onClick={() => handleAnswer(true)} className="block w-full px-4 py-2 bg-green-100 hover:bg-green-200 rounded">
+            <button
+              onClick={() => handleAnswer(true)}
+              className="block w-full px-4 py-2 bg-green-100 hover:bg-green-200 rounded"
+            >
               Grow Together
             </button>
-            <button onClick={() => handleAnswer(false)} className="block w-full px-4 py-2 bg-green-100 hover:bg-green-200 rounded">
+            <button
+              onClick={() => handleAnswer(false)}
+              className="block w-full px-4 py-2 bg-green-100 hover:bg-green-200 rounded"
+            >
               Work Alone
             </button>
-            <button onClick={() => handleAnswer(false)} className="block w-full px-4 py-2 bg-green-100 hover:bg-green-200 rounded">
+            <button
+              onClick={() => handleAnswer(false)}
+              className="block w-full px-4 py-2 bg-green-100 hover:bg-green-200 rounded"
+            >
               Don’t Ask Questions
             </button>
           </div>
