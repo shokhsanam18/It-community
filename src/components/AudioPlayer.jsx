@@ -14,7 +14,7 @@ export default function AudioPlayer() {
 
   const audioRef = useRef(null);
   const location = useLocation();
-  const allowedPaths = ["/", "/rules"];
+  const allowedPaths = ["/", "/rules", "/tryagain",];
 
   useEffect(() => {
     const audio = audioRef.current;

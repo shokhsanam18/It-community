@@ -8,6 +8,7 @@ import AudioPlayer from "./components/AudioPlayer";
 import { Questions } from "./screens/Questions";
 import EnableMusicToast from "./components/EnableMusicToast";
 import { useAudioStore } from "./store/useAudioStore";
+import TryAgain from "./screens/TryAgain";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/game" element={<Game />} />
         <Route path="/final" element={<Final />} />
         <Route path="/Questions" element={<Questions />} />
+        <Route path="/tryagain" element={<TryAgain />} />
       </Routes>
     </>
 
