@@ -16,7 +16,14 @@ export const useQuestionStore = create((set, get) => ({
       answers: { ...state.answers, [questionId]: answer },
     }));
   },
-
+  handleChange: (questionId, option) => {
+    set((state) => ({
+      answers: {
+        ...state.answers,
+        [questionId]: option,
+      },
+    }));
+  },
   handleSubmit: (navigate) => {
     const {
       answers,
@@ -24,10 +31,12 @@ export const useQuestionStore = create((set, get) => ({
       setShowModal,
       setShowFireworks,
       goNext,
+      selectedOption,
     } = get();
 
     const question = questions[currentQuestionIndex];
     const userAnswer = answers[question.id];
+    answers[question.id] = selectedOption;
 
     if (!userAnswer) return false;
 
@@ -39,7 +48,8 @@ export const useQuestionStore = create((set, get) => ({
       }, 2000);
     } else {
       set({
-        currentExplanation: explanations[question.id] || "Check the rules in the FAQ.",
+        currentExplanation:
+          explanations[question.id] || "Check the rules in the FAQ.",
         showModal: true,
       });
     }
@@ -49,7 +59,9 @@ export const useQuestionStore = create((set, get) => ({
 
   goNext: (navigate) => {
     if (get().currentQuestionIndex < questions.length - 1) {
-      set((state) => ({ currentQuestionIndex: state.currentQuestionIndex + 1 }));
+      set((state) => ({
+        currentQuestionIndex: state.currentQuestionIndex + 1,
+      }));
     } else {
       navigate("/Final", { state: { answers: get().answers } });
     }
