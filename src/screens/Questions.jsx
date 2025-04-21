@@ -5,7 +5,8 @@ import Confetti from "react-confetti";
 import GameCanvas from "../components/GameCanvas";
 import IncorrectModal from "../components/IncorrectModal";
 import { useQuestionStore } from "../store/useQuestionStore";
-import { questions} from "../data/questions";
+import { questions } from "../data/questions";
+import { useEffect, useState } from "react";
 
 export const Questions = () => {
   const navigate = useNavigate();
@@ -18,9 +19,25 @@ export const Questions = () => {
     showFireworks,
     showModal,
   } = useQuestionStore();
-  
+
   const currentQuestion = questions[currentQuestionIndex];
-  console.log("Index:", currentQuestionIndex, "Question ID:", currentQuestion?.id);
+  console.log(
+    "Index:",
+    currentQuestionIndex,
+    "Question ID:",
+    currentQuestion?.id
+  );
+
+  const [shuffledOptions, setShuffledOptions] = useState([]);
+
+  useEffect(() => {
+    if (currentQuestion?.options) {
+      const shuffled = [...currentQuestion.options].sort(
+        () => Math.random() - 0.5
+      );
+      setShuffledOptions(shuffled);
+    }
+  }, [currentQuestion.id]);
 
   const onSubmit = () => {
     const success = handleSubmit(navigate);
@@ -29,7 +46,9 @@ export const Questions = () => {
     }
   };
 
-  const progressPercentage = Math.round((currentQuestionIndex / totalQuestions) * 100);
+  const progressPercentage = Math.round(
+    (currentQuestionIndex / totalQuestions) * 100
+  );
 
   return (
     <div
@@ -37,11 +56,11 @@ export const Questions = () => {
         showFireworks ? "overflow-hidden" : ""
       }`}
     >
-      {showFireworks && <Confetti recycle={false} numberOfPieces={300} gravity={0.3} />}
+      {showFireworks && (
+        <Confetti recycle={false} numberOfPieces={700} gravity={0.6} />
+      )}
       <ToastContainer />
 
-      {/* Checkpoint Map (optional) */}
-      {/* Map */}
       <div
         className="flex items-center justify-center mb-8 flex-wrap gap-3 max-w-5xl"
         role="navigation"
@@ -58,7 +77,8 @@ export const Questions = () => {
                   isCurrent
                     ? "border-gray-600 bg-gray-200 animate-bounce text-green-800"
                     : isCompleted
-                    ? answers[questions[index].id] === questions[index].correctAnswer
+                    ? answers[questions[index].id] ===
+                      questions[index].correctAnswer
                       ? "border-green-300 bg-green-300 text-white"
                       : "border-red-400 bg-red-400 text-white"
                     : "border-gray-300 bg-white text-gray-600"
@@ -77,20 +97,22 @@ export const Questions = () => {
           );
         })}
       </div>
-      {/* Your existing checkpoint rendering code here */}
 
-      {/* Question Card */}
       <div className="w-full max-w-2xl bg-white p-6 rounded-xl text-center border shadow-lg">
-        <p className="text-lg font-semibold text-gray-800 mb-4">{currentQuestion.question}</p>
+        <p className="text-lg font-semibold text-gray-800 mb-4">
+          {currentQuestion.question}
+        </p>
 
         <div className="space-y-3">
-          {currentQuestion.options.map((option) => {
+          {shuffledOptions.map((option) => {
             const isSelected = answers[currentQuestion.id] === option;
             return (
               <label
                 key={option}
                 className={`block px-4 py-2 border rounded-lg cursor-pointer ${
-                  isSelected ? "bg-green-100 border-green-500" : "bg-white border-gray-200"
+                  isSelected
+                    ? "bg-green-100 border-green-500"
+                    : "bg-white border-gray-200"
                 }`}
               >
                 <input
@@ -120,7 +142,6 @@ export const Questions = () => {
         </button>
       </div>
 
-      {/* Progress Bar */}
       <div className="w-full max-w-2xl mt-4">
         <div className="bg-gray-200 h-3 rounded-full">
           <div
@@ -128,7 +149,9 @@ export const Questions = () => {
             style={{ width: `${progressPercentage}%` }}
           ></div>
         </div>
-        <p className="text-center text-sm text-gray-600 mt-1">{progressPercentage}% Complete</p>
+        <p className="text-center text-sm text-gray-600 mt-1">
+          {progressPercentage}% Complete
+        </p>
       </div>
 
       {showModal && <IncorrectModal navigate={navigate} />}
