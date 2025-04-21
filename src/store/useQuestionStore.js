@@ -1,6 +1,15 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { questions, explanations } from "../data/questions";
+import { questions as originalQuestions, explanations } from "../data/questions";
+
+function shuffleArray(arr) {
+  const array = [...arr];
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
 export const useQuestionStore = create(
   persist(
@@ -10,11 +19,25 @@ export const useQuestionStore = create(
       showFireworks: false,
       showModal: false,
       currentExplanation: "",
+      questions: [],
+      totalQuestions: 0,
 
-      totalQuestions: questions.length,
+      initializeQuiz: () => {
+        const shuffledQuestions = shuffleArray(originalQuestions).map((q) => ({
+          ...q,
+          options: shuffleArray(q.options),
+        }));
+
+        set({
+          questions: shuffledQuestions,
+          totalQuestions: shuffledQuestions.length,
+          currentQuestionIndex: 0,
+          answers: {},
+        });
+      },
 
       handleChange: (answer) => {
-        const questionId = questions[get().currentQuestionIndex].id;
+        const questionId = get().questions[get().currentQuestionIndex].id;
         set((state) => ({
           answers: { ...state.answers, [questionId]: answer },
         }));
@@ -24,6 +47,7 @@ export const useQuestionStore = create(
         const {
           answers,
           currentQuestionIndex,
+          questions,
           setShowModal,
           setShowFireworks,
           goNext,
@@ -38,12 +62,11 @@ export const useQuestionStore = create(
           setShowFireworks(true);
           setTimeout(() => {
             setShowFireworks(false);
-            get().goNext(navigate);
+            goNext(navigate);
           }, 2000);
         } else {
           set({
-            currentExplanation:
-              explanations[question.id] || "Check the rules in the FAQ.",
+            currentExplanation: explanations[question.id] || "Check the rules in the FAQ.",
             showModal: true,
           });
         }
@@ -52,20 +75,20 @@ export const useQuestionStore = create(
       },
 
       goNext: (navigate) => {
-        const { currentQuestionIndex, answers } = get();
+        const { currentQuestionIndex, questions, answers } = get();
         const isLast = currentQuestionIndex >= questions.length - 1;
-      
+
         if (!isLast) {
           set((state) => ({
             currentQuestionIndex: state.currentQuestionIndex + 1,
           }));
           return;
         }
-      
+
         const allCorrect = questions.every(
           (q) => answers[q.id] === q.correctAnswer
         );
-      
+
         if (allCorrect) {
           navigate("/final");
         } else {
@@ -75,10 +98,15 @@ export const useQuestionStore = create(
 
       setShowModal: (value) => set({ showModal: value }),
       setShowFireworks: (value) => set({ showFireworks: value }),
-      resetQuiz: () => set({ currentQuestionIndex: 0, answers: {} }),
+      resetQuiz: () =>
+        set({
+          currentQuestionIndex: 0,
+          answers: {},
+          questions: [],
+        }),
     }),
     {
-      name: "quiz-store", // key in localStorage
+      name: "quiz-store",
       partialize: (state) => ({
         currentQuestionIndex: state.currentQuestionIndex,
         answers: state.answers,

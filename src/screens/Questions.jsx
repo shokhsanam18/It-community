@@ -1,15 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Confetti from "react-confetti";
 import GameCanvas from "../components/GameCanvas";
 import IncorrectModal from "../components/IncorrectModal";
 import { useQuestionStore } from "../store/useQuestionStore";
-import { questions} from "../data/questions";
 
 export const Questions = () => {
   const navigate = useNavigate();
   const {
+    questions,
     currentQuestionIndex,
     totalQuestions,
     answers,
@@ -17,9 +17,24 @@ export const Questions = () => {
     handleSubmit,
     showFireworks,
     showModal,
+    initializeQuiz,
   } = useQuestionStore();
+
+
+  useEffect(() => {
+    if (!questions || questions.length === 0) {
+      initializeQuiz();
+    }
+  }, []);
   
   const currentQuestion = questions[currentQuestionIndex];
+  if (!currentQuestion) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-lg font-semibold text-gray-700 animate-pulse">Loading quiz...</p>
+      </div>
+    );
+  }
 
   const onSubmit = () => {
     const success = handleSubmit(navigate);
