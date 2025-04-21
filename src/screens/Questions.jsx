@@ -183,7 +183,6 @@ export const Questions = () => {
   const [shuffledQuestions, setShuffledQuestions] = useState([]);
   const [shuffledOptions, setShuffledOptions] = useState([]);
 
-  // Перемешиваем вопросы один раз при загрузке
   useEffect(() => {
     const shuffled = [...originalQuestions].sort(() => Math.random() - 0.5);
     setShuffledQuestions(shuffled);
@@ -191,7 +190,6 @@ export const Questions = () => {
 
   const currentQuestion = shuffledQuestions[currentQuestionIndex];
 
-  // Перемешиваем опции каждый раз при смене вопроса
   useEffect(() => {
     if (currentQuestion?.options) {
       const shuffled = [...currentQuestion.options].sort(

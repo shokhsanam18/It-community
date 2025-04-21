@@ -3,17 +3,20 @@ import { useNavigate } from "react-router-dom";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { useAudioStore } from "../store/useAudioStore";
 import MusicToggle from "../components/MusicToggle";
+import { useUserStore } from "../store/useUserStore";
 
 export default function Welcome() {
-    const [name, setName] = useState("");
+    const fullname = useUserStore((state) => state.fullname);
+    const setFullname = useUserStore((state) => state.setFullname);
     const navigate = useNavigate();
     const { setMusicPlaying } = useAudioStore();
   
     const handleStart = () => {
-      if (name.trim()) {
-        navigate("/rules", { state: { name } });
-      }
-    };
+        if (fullname.trim()) {
+          setFullname(fullname);
+          navigate("/rules");
+        }
+      };
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] flex flex-col items-center justify-center px-4 text-center relative">
       
@@ -35,16 +38,16 @@ export default function Welcome() {
         <input
         type="text"
         placeholder="First & Last Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        value={fullname}
+        onChange={(e) => setFullname(e.target.value)}
         className="border border-gray-300 rounded-full px-5 py-3 w-full max-w-xs text-gray-800 mb-4 shadow-sm focus:ring-2 focus:ring-[#5cb452] outline-none transition-all duration-300 animate-fade-in-up delay-200"
         />
 
         <button
         onClick={handleStart}
-        disabled={!name.trim()}
+        disabled={!fullname.trim()}
         className={`px-6 py-3 rounded-full font-medium text-white shadow-md transition-all duration-300 animate-fade-in-up delay-300 ${
-            name.trim()
+            fullname.trim()
             ? "bg-[#77c042] cursor-pointer hover:bg-[#5cb452]"
             : "bg-[#828583] cursor-not-allowed"
         }`}
