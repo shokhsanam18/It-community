@@ -20,7 +20,6 @@ export const Questions = () => {
   } = useQuestionStore();
   
   const currentQuestion = questions[currentQuestionIndex];
-  console.log("Index:", currentQuestionIndex, "Question ID:", currentQuestion?.id);
 
   const onSubmit = () => {
     const success = handleSubmit(navigate);
@@ -100,6 +99,7 @@ export const Questions = () => {
                   checked={isSelected}
                   onChange={() => handleChange(option)}
                   className="mr-2"
+                  disabled={showFireworks}
                 />
                 {option}
               </label>
@@ -109,7 +109,7 @@ export const Questions = () => {
 
         <button
           onClick={onSubmit}
-          disabled={!answers[currentQuestion.id]}
+          disabled={!answers[currentQuestion.id] || showFireworks}
           className={`w-full mt-6 py-3 rounded-full font-medium transition ${
             answers[currentQuestion.id]
               ? "bg-[#77c042] hover:bg-[#5cb452] text-white"
