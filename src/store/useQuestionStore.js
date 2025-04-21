@@ -52,25 +52,48 @@ export const useQuestionStore = create(
           setShowFireworks,
           goNext,
         } = get();
-
+      
         const question = questions[currentQuestionIndex];
         const userAnswer = answers[question.id];
-
+      
         if (!userAnswer) return false;
-
+      
         if (userAnswer === question.correctAnswer) {
+          const audio = new Audio("./clapping.wav");
+          audio.volume = 0.8;
+          audio.play();
+      
           setShowFireworks(true);
+      
+          const CELEBRATION_DURATION = 4000;
+          const FADE_DURATION = 1000;
+          const fadeStep = 50;
+      
+          // Start fading out 1s before the end
+          setTimeout(() => {
+            const fadeInterval = setInterval(() => {
+              if (audio.volume > 0.05) {
+                audio.volume -= 0.05;
+              } else {
+                clearInterval(fadeInterval);
+                audio.pause();
+                audio.currentTime = 0;
+              }
+            }, fadeStep);
+          }, CELEBRATION_DURATION - FADE_DURATION);
+      
+          // Go to next question after confetti and fade-out
           setTimeout(() => {
             setShowFireworks(false);
             goNext(navigate);
-          }, 2000);
+          }, CELEBRATION_DURATION);
         } else {
           set({
             currentExplanation: explanations[question.id] || "Check the rules in the FAQ.",
             showModal: true,
           });
         }
-
+      
         return true;
       },
 

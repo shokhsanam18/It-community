@@ -26,6 +26,18 @@ export const Questions = () => {
       initializeQuiz();
     }
   }, []);
+
+  useEffect(() => {
+    if (showFireworks) {
+      document.body.style.overflowX = "hidden";
+    } else {
+      document.body.style.overflowX = "";
+    }
+  
+    return () => {
+      document.body.style.overflowX = "";
+    };
+  }, [showFireworks]);
   
   const currentQuestion = questions[currentQuestionIndex];
   if (!currentQuestion) {
@@ -45,13 +57,16 @@ export const Questions = () => {
 
   const progressPercentage = Math.round((currentQuestionIndex / totalQuestions) * 100);
 
+
+  
+
   return (
     <div
       className={`min-h-screen px-4 py-8 flex flex-col items-center transition-all duration-300 bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] ${
         showFireworks ? "overflow-hidden" : ""
       }`}
     >
-      {showFireworks && <Confetti recycle={false} numberOfPieces={300} gravity={0.3} />}
+      {showFireworks && <Confetti width={window.innerWidth} recycle={false} numberOfPieces={1200} gravity={0.2} wind={0.01} initialVelocityY={10} />}
       <ToastContainer />
 
       {/* Checkpoint Map (optional) */}
