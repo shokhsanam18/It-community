@@ -24,12 +24,11 @@ export default function Rules() {
       />
 
       {/* Headline */}
-      <h2 className="text-3xl font-semibold text-gray-800 mt-20 text-center">
+      <h2 className="text-3xl font-semibold text-gray-800 mt-20 text-center animate-fade-in-up">
         Community Guidelines & <span className="text-[#77c042]">Onboarding</span>
-      </h2>
+        </h2>
 
-      {/* Info Panel */}
-      <div className="bg-white rounded-xl shadow-lg mt-6 p-6 w-full max-w-2xl text-gray-700">
+        <div className="bg-white rounded-xl shadow-lg mt-6 p-6 w-full max-w-2xl text-gray-700 animate-fade-in-up delay-100">
         <ul className="list-disc list-inside space-y-3 text-left leading-relaxed">
           <li>
             <span className="text-[#77c042] font-semibold">Respect:</span> Be kind, inclusive, and supportive.
@@ -52,10 +51,10 @@ export default function Rules() {
       {/* Start Quest Button */}
       <button
         onClick={() => navigate("/Questions", { state: { name } })}
-        className="mt-6 px-6 py-3 rounded-full font-medium text-white shadow-md bg-[#77c042] hover:bg-[#5cb452] transition"
-      >
+        className="mt-6 px-6 py-3 rounded-full font-medium text-white shadow-md bg-[#77c042] hover:bg-[#5cb452] transition-all duration-300 animate-fade-in-up delay-200"
+        >
         Start Quest
-      </button>
+        </button>
     </div>
   );
 }

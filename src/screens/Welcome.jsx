@@ -22,34 +22,35 @@ export default function Welcome() {
         <MusicToggle />
 
       {/* Logo */}
-      <img src="/logo.png" alt="IT Community Logo" className="w-44 mb-3" />
+      <img
+        src="/logo.png"
+        alt="IT Community Logo"
+        className="w-44 mb-3 animate-fade-in-up"
+        />
 
-      {/* Headline */}
-      <h1 className="text-3xl font-semibold text-gray-800 mb-4">
+        <h1 className="text-3xl font-semibold text-gray-800 mb-4 animate-fade-in-up delay-100">
         Welcome to <span className="text-[#77c042]">Commventure!</span>
-      </h1>
+        </h1>
 
-      {/* Input Field */}
-      <input
+        <input
         type="text"
         placeholder="First & Last Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="border border-gray-300 rounded-full px-5 py-3 w-full max-w-xs text-gray-800 mb-4 shadow-sm focus:ring-2 focus:ring-[#5cb452] outline-none"
-      />
+        className="border border-gray-300 rounded-full px-5 py-3 w-full max-w-xs text-gray-800 mb-4 shadow-sm focus:ring-2 focus:ring-[#5cb452] outline-none transition-all duration-300 animate-fade-in-up delay-200"
+        />
 
-      {/* Start Game Button */}
-      <button
+        <button
         onClick={handleStart}
         disabled={!name.trim()}
-        className={`px-6 py-3 rounded-full font-medium text-white shadow-md transition ${
-          name.trim()
+        className={`px-6 py-3 rounded-full font-medium text-white shadow-md transition-all duration-300 animate-fade-in-up delay-300 ${
+            name.trim()
             ? "bg-[#77c042] hover:bg-[#5cb452]"
             : "bg-[#828583] cursor-not-allowed"
         }`}
-      >
+        >
         Start Game
-      </button>
+        </button>
 
       {/* Instructions */}
       <p className="text-sm text-gray-500 mt-4 max-w-xs">
