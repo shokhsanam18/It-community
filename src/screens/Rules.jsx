@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import MusicToggle from "../components/MusicToggle";
+import { useUserStore } from "../store/useUserStore";
 
 export default function Rules() {
-    const { state } = useLocation();
-    const name = state?.name || "Volunteer";
+    const fullname = useUserStore((state) => state.fullname);
     const navigate = useNavigate();
   
 
@@ -50,7 +50,7 @@ export default function Rules() {
 
       {/* Start Quest Button */}
       <button
-        onClick={() => navigate("/Questions", { state: { name } })}
+        onClick={() => navigate("/Questions")}
         className="mt-6 px-6 py-3 cursor-pointer rounded-full font-medium text-white shadow-md bg-[#77c042] hover:bg-[#5cb452] transition-all duration-300 animate-fade-in-up delay-200"
         >
         Start Quest
