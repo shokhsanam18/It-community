@@ -4,6 +4,8 @@ import Confetti from "react-confetti";
 import { useNavigate } from "react-router-dom";
 import { questions, explanations } from "../data/questions";
 import { toast } from "react-toastify";
+import GameCanvas from "../components/GameCanvas";
+
 
 // Explanations pulled from the FAQ
 
@@ -79,6 +81,7 @@ export const Questions = () => {
 
       {/* Map */}
       <div className="flex items-center justify-center mb-8 flex-wrap gap-3 max-w-5xl">
+        
         {questions.map((_, index) => {
           const isCurrent = index === currentQuestionIndex;
           const isCompleted = index < currentQuestionIndex;
@@ -97,8 +100,8 @@ export const Questions = () => {
                 {index + 1}
               </div>
               {isCurrent && (
-                <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                  <div className="text-sm">🎒</div>
+                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
+                  <GameCanvas />
                 </div>
               )}
             </div>
