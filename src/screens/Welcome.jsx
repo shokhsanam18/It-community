@@ -45,7 +45,7 @@ export default function Welcome() {
         disabled={!name.trim()}
         className={`px-6 py-3 rounded-full font-medium text-white shadow-md transition-all duration-300 animate-fade-in-up delay-300 ${
             name.trim()
-            ? "bg-[#77c042] hover:bg-[#5cb452]"
+            ? "bg-[#77c042] cursor-pointer hover:bg-[#5cb452]"
             : "bg-[#828583] cursor-not-allowed"
         }`}
         >

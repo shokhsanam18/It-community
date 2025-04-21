@@ -51,7 +51,7 @@ export default function Rules() {
       {/* Start Quest Button */}
       <button
         onClick={() => navigate("/Questions", { state: { name } })}
-        className="mt-6 px-6 py-3 rounded-full font-medium text-white shadow-md bg-[#77c042] hover:bg-[#5cb452] transition-all duration-300 animate-fade-in-up delay-200"
+        className="mt-6 px-6 py-3 cursor-pointer rounded-full font-medium text-white shadow-md bg-[#77c042] hover:bg-[#5cb452] transition-all duration-300 animate-fade-in-up delay-200"
         >
         Start Quest
         </button>
