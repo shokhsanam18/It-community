@@ -3,25 +3,23 @@ import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { useAudioStore } from "../store/useAudioStore";
 
 export default function MusicToggle() {
-  const { musicPlaying, setMusicPlaying, audioRef } = useAudioStore();
+  const { isMuted, setMuted, audioRef } = useAudioStore();
 
-  const toggleMusic = () => {
+  const toggleMute = () => {
     if (!audioRef) return;
-    if (musicPlaying) {
-      audioRef.pause();
-    } else {
-      audioRef.play();
-    }
-    setMusicPlaying(!musicPlaying);
+
+    const newMuted = !isMuted;
+    audioRef.muted = newMuted;
+    setMuted(newMuted);
   };
 
   return (
     <div
       className="absolute top-4 right-4 cursor-pointer text-gray-400 hover:text-[#77c042] transition"
-      onClick={toggleMusic}
-      title={musicPlaying ? "Pause Music" : "Play Music"}
+      onClick={toggleMute}
+      title={isMuted ? "Unmute Music" : "Mute Music"}
     >
-      {musicPlaying ? <FaVolumeUp size={24} /> : <FaVolumeMute size={24} />}
+      {isMuted ? <FaVolumeMute size={24} /> : <FaVolumeUp size={24} />}
     </div>
   );
 }

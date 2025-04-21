@@ -6,12 +6,18 @@ import Game from "./screens/Game";
 import Final from "./screens/Final";
 import AudioPlayer from "./components/AudioPlayer";
 import { Questions } from "./screens/Questions";
+import EnableMusicToast from "./components/EnableMusicToast";
+import { useAudioStore } from "./store/useAudioStore";
 
 function App() {
+
+  const { showEnableToast } = useAudioStore();
   return (
     <>
       {/* AudioPlayer is mounted ONCE, above all routes */}
       <AudioPlayer />
+
+      {showEnableToast && <EnableMusicToast />}
 
       <Routes>
         <Route path="/" element={<Welcome />} />
