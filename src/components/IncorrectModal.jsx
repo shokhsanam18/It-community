@@ -1,6 +1,5 @@
 import React from "react";
 import { useQuestionStore } from "../store/useQuestionStore";
-import { questions } from "../data/questions";
 
 const IncorrectModal = ({ navigate }) => {
   const {
@@ -10,6 +9,7 @@ const IncorrectModal = ({ navigate }) => {
     currentExplanation,
     setShowModal,
     goNext,
+    questions,
   } = useQuestionStore();
 
   // 🧠 Get the question manually based on current index
