@@ -6,10 +6,6 @@ import { questions, explanations } from "../data/questions";
 import { toast } from "react-toastify";
 import GameCanvas from "../components/GameCanvas";
 
-
-// Explanations pulled from the FAQ
-
-
 export const Questions = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
@@ -30,7 +26,7 @@ export const Questions = () => {
 
   const handleSubmit = () => {
     const userAnswer = answers[currentQuestion.id];
-  
+
     if (!userAnswer) {
       toast.warn("Please select an answer before proceeding.", {
         position: "top-center",
@@ -39,12 +35,11 @@ export const Questions = () => {
       });
       return;
     }
-  
+
     const isCorrect = userAnswer === currentQuestion.correctAnswer;
-  
+
     if (isCorrect) {
       setShowFireworks(true);
-  
       setTimeout(() => {
         setShowFireworks(false);
         goNext();
@@ -55,33 +50,36 @@ export const Questions = () => {
       setShowModal(true);
     }
   };
-  
+
   const goNext = () => {
-    if (currentQuestionIndex < questions.length - 1) {
+    if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex((prev) => prev + 1);
     } else {
-      // Delay navigation here too, in case last confetti needs to finish
       setTimeout(() => {
         navigate("/Final", { state: { answers } });
-      }, 500); // Slight delay feels smoother
+      }, 500);
     }
   };
 
+  const progressPercentage = Math.round(((currentQuestionIndex) / totalQuestions) * 100);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] px-4 py-8 flex flex-col items-center relative">
+    <div
+      className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] px-4 py-8 flex flex-col items-center relative"
+      role="main"
+      aria-label="Questionnaire Interface"
+    >
       {showFireworks && (
-          <Confetti
-            recycle={false}
-            numberOfPieces={300}
-            gravity={0.3}
-            tweenDuration={1000}
-          />
-        )}
+        <Confetti recycle={false} numberOfPieces={300} gravity={0.3} tweenDuration={1000} />
+      )}
       <ToastContainer />
 
       {/* Map */}
-      <div className="flex items-center justify-center mb-8 flex-wrap gap-3 max-w-5xl">
-        
+      <div
+        className="flex items-center justify-center mb-8 flex-wrap gap-3 max-w-5xl"
+        role="navigation"
+        aria-label="Question Navigation Dots"
+      >
         {questions.map((_, index) => {
           const isCurrent = index === currentQuestionIndex;
           const isCompleted = index < currentQuestionIndex;
@@ -91,11 +89,15 @@ export const Questions = () => {
               <div
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 ${
                   isCurrent
-                    ? "border-green-600 bg-green-100 animate-bounce text-green-800"
+                    ? "border-gray-600 bg-gray-200 animate-bounce text-green-800"
                     : isCompleted
-                    ? "border-green-300 bg-green-300 text-white"
+                    ? answers[questions[index].id] === questions[index].correctAnswer
+                      ? "border-green-300 bg-green-300 text-white"
+                      : "border-red-400 bg-red-400 text-white"
                     : "border-gray-300 bg-white text-gray-600"
                 }`}
+                aria-current={isCurrent ? "step" : undefined}
+                aria-label={`Checkpoint ${index + 1}`}
               >
                 {index + 1}
               </div>
@@ -110,19 +112,21 @@ export const Questions = () => {
       </div>
 
       {/* Question Card */}
-      <div className="w-full max-w-2xl bg-white p-6 rounded-xl shadow-lg border border-green-200 text-center">
-        <p className="text-lg font-semibold text-gray-800 mb-4">
-          {currentQuestion.question}
-        </p>
+      <div
+          className="w-full max-w-2xl bg-white p-6 rounded-xl shadow-lg border border-green-200 text-center animate-fadeInUp"
+          role="region"
+          aria-label={`Question ${currentQuestionIndex + 1} of ${totalQuestions}`}
+        >
+        <p className="text-lg font-semibold text-gray-800 mb-4">{currentQuestion.question}</p>
 
-        <div className="space-y-3">
+        <div className="space-y-3" role="radiogroup" aria-label="Answer choices">
           {currentQuestion.options.map((option) => {
             const isSelected = answers[currentQuestion.id] === option;
 
             return (
               <label
                 key={option}
-                className={`block px-4 py-2 rounded-lg border cursor-pointer text-gray-800 transition-all ${
+                className={`block px-4 py-2 rounded-lg border cursor-pointer text-gray-800 transition-transform transform hover:scale-[1.02] duration-300 ease-in-out ${
                   isSelected
                     ? "bg-green-100 border-green-500"
                     : "bg-white border-gray-200 hover:bg-green-50 hover:border-green-300"
@@ -135,6 +139,7 @@ export const Questions = () => {
                   checked={isSelected}
                   className="mr-2"
                   onChange={() => handleChange(option)}
+                  aria-checked={isSelected}
                 />
                 {option}
               </label>
@@ -150,34 +155,61 @@ export const Questions = () => {
               ? "bg-[#77c042] hover:bg-[#5cb452] text-white"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"
           }`}
+          aria-disabled={!answers[currentQuestion.id]}
+          aria-label="Submit answer"
         >
-          {currentQuestionIndex < questions.length - 1 ? "Next" : "Submit"}
+          {currentQuestionIndex < totalQuestions - 1 ? "Next" : "Submit"}
         </button>
       </div>
 
-      {/* Progress */}
-      <div className="mt-6 text-gray-700 text-sm">
-        Checkpoint {currentQuestionIndex + 1} / {totalQuestions}
+      {/* Progress % Bar */}
+      <div className="w-full max-w-2xl mt-4" role="progressbar" aria-valuenow={progressPercentage} aria-valuemin="0" aria-valuemax="100" aria-label="Progress">
+        <div className="w-full bg-gray-200 rounded-full h-3">
+        <div
+          className="h-3 bg-[#77c042] rounded-full transition-all duration-700 ease-in-out"
+          style={{ width: `${progressPercentage}%` }}
+        />
+        </div>
+        <p className="mt-1 text-center text-sm text-gray-600">{progressPercentage}% Complete</p>
       </div>
 
       {/* ❌ Incorrect Modal */}
       {showModal && (
         <div className="fixed inset-0 backdrop-blur-xs bg-black/50 shadow-2xl flex items-center justify-center z-50 px-4">
-          <div className="bg-white rounded-xl p-6 max-w-md w-full text-center shadow-xl border border-green-200">
-            <h2 className="text-lg font-semibold text-red-600 mb-2">Incorrect</h2>
-            <p className="text-gray-800 mb-3">
-              <strong>Correct Answer:</strong> {currentQuestion.correctAnswer}
-            </p>
-            <div className="mb-4">
-            <h3 className="text-sm font-semibold text-green-600 mb-1 uppercase tracking-wide">Explanation</h3>
-              <p className="text-sm text-gray-700">{currentExplanation}</p>
+          <div
+            className="bg-white rounded-xl p-6 max-w-md w-full text-center shadow-xl border border-green-200 animate-fadeInUp"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Incorrect Answer Feedback"
+          >
+            <h2 className="text-lg font-semibold text-red-600 mb-4">Incorrect Answer</h2>
+
+            <div className="text-left space-y-3">
+              <p className="text-sm text-gray-800 font-medium">{currentQuestion.question}</p>
+
+              <div className="bg-red-100 border border-red-300 text-red-800 rounded p-2 text-sm">
+                <strong>Your answer:</strong> {answers[currentQuestion.id]}
+              </div>
+
+              <div className="bg-green-100 border border-green-300 text-green-800 rounded p-2 text-sm">
+                <strong>Correct answer:</strong> {currentQuestion.correctAnswer}
+              </div>
+
+              <div className="pt-2 border-t border-gray-200">
+                <h3 className="text-sm font-semibold text-green-600 uppercase tracking-wide mb-1">
+                  Explanation
+                </h3>
+                <p className="text-sm text-gray-700 leading-snug">{currentExplanation}</p>
+              </div>
             </div>
+
             <button
               onClick={() => {
                 setShowModal(false);
                 goNext();
               }}
-              className="px-6 py-2 bg-[#77c042] text-white rounded-full font-medium hover:bg-[#5cb452] transition"
+              className="mt-6 px-6 py-2 bg-[#77c042] text-white rounded-full font-medium hover:bg-[#5cb452] transition"
+              aria-label="Continue to next question"
             >
               Continue
             </button>
