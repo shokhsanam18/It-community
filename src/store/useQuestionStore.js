@@ -52,17 +52,30 @@ export const useQuestionStore = create(
       },
 
       goNext: (navigate) => {
-        if (get().currentQuestionIndex < questions.length - 1) {
+        const { currentQuestionIndex, answers } = get();
+        const isLast = currentQuestionIndex >= questions.length - 1;
+      
+        if (!isLast) {
           set((state) => ({
             currentQuestionIndex: state.currentQuestionIndex + 1,
           }));
+          return;
+        }
+      
+        const allCorrect = questions.every(
+          (q) => answers[q.id] === q.correctAnswer
+        );
+      
+        if (allCorrect) {
+          navigate("/final");
         } else {
-          navigate("/Final", { state: { answers: get().answers } });
+          navigate("/tryagain");
         }
       },
 
       setShowModal: (value) => set({ showModal: value }),
       setShowFireworks: (value) => set({ showFireworks: value }),
+      resetQuiz: () => set({ currentQuestionIndex: 0, answers: {} }),
     }),
     {
       name: "quiz-store", // key in localStorage
