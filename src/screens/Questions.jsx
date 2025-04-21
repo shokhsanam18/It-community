@@ -65,10 +65,12 @@ export const Questions = () => {
 
   return (
     <div
-      className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] px-4 py-8 flex flex-col items-center relative"
-      role="main"
-      aria-label="Questionnaire Interface"
-    >
+        className={`min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] px-4 py-8 flex flex-col items-center relative transition-all duration-300 ${
+          showFireworks ? "overflow-hidden" : ""
+        }`}
+        role="main"
+        aria-label="Questionnaire Interface"
+      >
       {showFireworks && (
         <Confetti recycle={false} numberOfPieces={300} gravity={0.3} tweenDuration={1000} />
       )}
@@ -87,7 +89,7 @@ export const Questions = () => {
           return (
             <div key={index} className="relative">
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 ${
+                className={`w-8 h-8 mb-5 sm:mb-2 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 ${
                   isCurrent
                     ? "border-gray-600 bg-gray-200 animate-bounce text-green-800"
                     : isCompleted
