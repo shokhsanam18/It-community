@@ -5,10 +5,10 @@ import { useQuestionStore } from "../store/useQuestionStore";
 
 export default function TryAgain() {
   const navigate = useNavigate();
-  const resetQuiz = useQuestionStore((state) => state.resetQuiz);
+  const initializeQuiz = useQuestionStore((state) => state.initializeQuiz);
 
   const handleTryAgain = () => {
-    resetQuiz();
+    initializeQuiz();
     navigate("/rules");
   };
 
@@ -27,7 +27,7 @@ export default function TryAgain() {
 
       <button
         onClick={handleTryAgain}
-        className="bg-[#77c042] hover:bg-[#5cb452] text-white px-6 py-3 rounded-full font-semibold shadow-md transition-all duration-300 animate-fade-in-up delay-200"
+        className="bg-[#77c042] hover:bg-[#5cb452] cursor-pointer text-white px-6 py-3 rounded-full font-semibold shadow-md transition-all duration-300 animate-fade-in-up delay-200"
       >
         Try Again
       </button>
