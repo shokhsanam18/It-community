@@ -49,25 +49,87 @@ export default function Rules() {
       <div className="bg-white rounded-xl shadow-lg mt-6 p-6 w-full max-w-2xl text-gray-700 animate-fade-in-up delay-100">
         <ul className="list-disc list-inside space-y-3 text-left leading-relaxed">
           <li>
-            <span className="text-[#77c042] font-semibold">Respect:</span> Be
-            kind, inclusive, and supportive.
+            <span className="text-[#77c042] font-semibold">Language: </span>
+            You can write your posts and comments, or share content in Uzbek,
+            Russian or English languages.
           </li>
           <li>
-            <span className="text-[#77c042] font-semibold">Discipline:</span>{" "}
-            Always be on time (15 minutes early is ideal).
+            <span className="text-[#77c042] font-semibold">Privacy:</span>{" "}
+            Respect the privacy of other members. Do not share private
+            conversations or messages without the other person's consent.
           </li>
           <li>
-            <span className="text-[#77c042] font-semibold">Humility:</span> Be
-            open to learning and improving.
+            <span className="text-[#77c042] font-semibold">Spam:</span> Do not
+            spam. Do not solicit or advertise products or services without prior
+            approval from the group administrators.
           </li>
           <li>
-            <span className="text-[#77c042] font-semibold">Relevance:</span>{" "}
-            Keep your communication focused and meaningful.
+            <span className="text-[#77c042] font-semibold"> Theme: </span>Stay
+            on topic. Keep discussions focused on technology and IT-related
+            topics to ensure that the group remains a valuable resource for IT
+            professionals.
           </li>
           <li>
-            <span className="text-[#77c042] font-semibold">Fun:</span> Stay
-            playful and enjoy your journey! 😊
+            <span className="text-[#77c042] font-semibold">Inclusivity:</span>{" "}
+            Avoid bringing any political, religious and other sensitive topics
+            in your posts or comments. Any off-topics may be deleted by
+            administrators.
           </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Security:</span> Do
+            not post content that could be considered offensive or inappropriate
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Rights: </span>
+            Do not post illegal or copyrighted material.
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Off-topic: </span>Do
+            not post personal information about yourself or others. This
+            includes phone numbers, addresses, and other sensitive information.
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Respect: </span>Be
+            respectful and professional at all times. This includes refraining
+            from using offensive language or making personal attacks on other
+            members.
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Post: </span> If you
+            are unsure whether something is appropriate to post, ask a group
+            administrator or moderator for guidance.
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Content: </span>Do
+            not post links to illegal resources, including resources with
+            illegal content.
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Ethics: </span>{" "}
+            Follow accepted standards of ethics and morality in online
+            communication.
+          </li>
+
+          <p>
+            Please follow these guidelines and rules set forth by the group
+            administrators. Failure to do so may result in removal from the
+            community.
+          </p>
+          <p>
+            Remember that community administrators have the right to moderate
+            content and remove inappropriate messages in accordance with their
+            rules.
+          </p>
+          <p>
+            These rules can be modified or expanded depending on the specific
+            requirements and goals of the community
+          </p>
+          <p>
+            By following these rules, you can help create a positive and
+            productive online community where members can share their knowledge,
+            discuss industry trends, ask questions, and collaborate on projects
+            in a respectful and professional manner.
+          </p>
         </ul>
       </div>
 
