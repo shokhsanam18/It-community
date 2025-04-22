@@ -8,6 +8,18 @@ export default function Rules() {
   const fullname = useUserStore((state) => state.fullname);
   const navigate = useNavigate();
 
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Enter") {
+        navigate("/Questions");
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [navigate]);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] px-4 py-8 relative flex flex-col items-center">
       {/* Music Toggle */}

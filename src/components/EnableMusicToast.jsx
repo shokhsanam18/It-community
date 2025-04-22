@@ -11,8 +11,8 @@ export default function EnableMusicToast() {
   } = useAudioStore();
 
   useEffect(() => {
+    if (!audioRef) return;
     const handleUserInteraction = () => {
-
       if (audioRef) {
         try {
             audioRef.muted = false;
