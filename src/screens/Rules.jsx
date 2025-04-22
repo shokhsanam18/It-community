@@ -8,7 +8,6 @@ export default function Rules() {
   const fullname = useUserStore((state) => state.fullname);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Enter") {
