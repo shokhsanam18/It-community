@@ -4,10 +4,21 @@ import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { useAudioStore } from "../store/useAudioStore";
 import MusicToggle from "../components/MusicToggle";
 import { useUserStore } from "../store/useUserStore";
+import { useTelegram } from "../hooks/useTelegram";
 
 export default function Welcome() {
+  const { user, expand } = useTelegram();
   const fullname = useUserStore((state) => state.fullname);
   const setFullname = useUserStore((state) => state.setFullname);
+
+  useEffect(() => {
+    expand?.(); // open full screen in Telegram
+
+    if (user?.first_name && !fullname) {
+      const name = `${user.first_name} ${user.last_name || ""}`.trim();
+      setFullname(name);
+    }
+  }, [user]);
   const navigate = useNavigate();
   const { setMusicPlaying } = useAudioStore();
 
