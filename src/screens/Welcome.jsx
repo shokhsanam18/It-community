@@ -40,6 +40,11 @@ export default function Welcome() {
         placeholder="First & Last Name"
         value={fullname}
         onChange={(e) => setFullname(e.target.value)}
+        onKeyDown={(e) => {
+            if (e.key === "Enter" && fullname.trim()) {
+              handleStart();
+            }
+        }}
         className="border border-gray-300 rounded-full px-5 py-3 w-full max-w-xs text-gray-800 mb-4 shadow-sm focus:ring-2 focus:ring-[#5cb452] outline-none transition-all duration-300 animate-fade-in-up delay-200"
       />
 

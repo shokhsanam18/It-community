@@ -33,156 +33,156 @@ export const questions = [
     ],
     correctAnswer: "Only with Shavkat aka’s permission",
   },
-  {
-    id: 4,
-    question: "Can you share your personal event invitation in the UZ IT COMMUNITY chat?",
-    options: [
-      "Only if IT Community is co-organizer or you have permission",
-      "Yes, if the event is free",
-      "Only if it's a startup event",
-    ],
-    correctAnswer: "Only if IT Community is co-organizer or you have permission",
-  },
-  {
-    id: 5,
-    question: "Can you post job or internship opportunities?",
-    options: [
-      "Only with permission or if it’s exclusive to volunteers",
-      "Yes, any opportunity is welcome",
-      "Only if you tag an admin",
-    ],
-    correctAnswer: "Only with permission or if it’s exclusive to volunteers",
-  },
-  {
-    id: 6,
-    question: "Can you add your friend directly to the group?",
-    options: [
-      "No, they must be selected by admins",
-      "Yes, if they’re a developer",
-      "Only if they’re interested in IT",
-    ],
-    correctAnswer: "No, they must be selected by admins",
-  },
-  {
-    id: 7,
-    question: "Should you send 'hello' or 'how are you' as separate messages in the chat?",
-    options: [
-      "No, you should write your full message at once",
-      "Yes, it’s a polite way to start",
-      "Only on weekends",
-    ],
-    correctAnswer: "No, you should write your full message at once",
-  },
-  {
-    id: 8,
-    question: "What is the '2G Community' joke based on?",
-    options: [
-      "Replying very late in a thread",
-      "Using outdated phones",
-      "People who live in rural areas",
-    ],
-    correctAnswer: "Replying very late in a thread",
-  },
-  {
-    id: 9,
-    question: "Why is Roman called the most humble and handsome?",
-    options: [
-      "It started as a running group joke",
-      "He won an internal vote",
-      "He’s the official spokesperson",
-    ],
-    correctAnswer: "It started as a running group joke",
-  },
-  {
-    id: 10,
-    question: "What is the purpose of the 'Keling Tanishaylik' bot?",
-    options: [
-      "To help volunteers connect with each other",
-      "To report inactive members",
-      "To send weekly news updates",
-    ],
-    correctAnswer: "To help volunteers connect with each other",
-  },
-  {
-    id: 11,
-    question: "How do you participate in Keling Tanishaylik?",
-    options: [
-      "Vote in the poll and press start in the bot",
-      "Send your phone number to an admin",
-      "Write your name in the group",
-    ],
-    correctAnswer: "Vote in the poll and press start in the bot",
-  },
-  {
-    id: 12,
-    question: "Can you post birthday or holiday congratulations in the group?",
-    options: [
-      "No, it creates message spam",
-      "Yes, but only for admins",
-      "Only on your own birthday",
-    ],
-    correctAnswer: "No, it creates message spam",
-  },
-  {
-    id: 13,
-    question: "Can you discuss politics, religion, or personal topics in the chat?",
-    options: [
-      "No, keep it relevant to volunteering and IT",
-      "Yes, as long as it's respectful",
-      "Only with admin approval",
-    ],
-    correctAnswer: "No, keep it relevant to volunteering and IT",
-  },
-  {
-    id: 14,
-    question: "Are there official rules for the IT Community?",
-    options: [
-      "Yes, and they apply to the volunteer chat as well",
-      "No, it’s informal",
-      "Only for admins",
-    ],
-    correctAnswer: "Yes, and they apply to the volunteer chat as well",
-  },
-  {
-    id: 15,
-    question: "What format should your Telegram name follow?",
-    options: [
-      "Firstname Lastname in Latin using default font",
-      "Emoji + Nickname",
-      "Surname Firstname in Cyrillic",
-    ],
-    correctAnswer: "Firstname Lastname in Latin using default font",
-  },
-  {
-    id: 16,
-    question: "Is it required to have a Telegram username?",
-    options: [
-      "Yes, for easier tagging and communication",
-      "No, it’s optional",
-      "Only if you're an admin",
-    ],
-    correctAnswer: "Yes, for easier tagging and communication",
-  },
-  {
-    id: 17,
-    question: "What is 'Bazaar Day' in the UZ IT COMMUNITY chat?",
-    options: [
-      "A day to share your projects or social media links",
-      "A day to buy and sell gadgets",
-      "A community hackathon day",
-    ],
-    correctAnswer: "A day to share your projects or social media links",
-  },
-  {
-    id: 18,
-    question: "Where can you post anything you want (within ethical limits)?",
-    options: [
-      "In the open-source chat",
-      "In the main volunteer group",
-      "On any weekday in the main group",
-    ],
-    correctAnswer: "In the open-source chat",
-  },
+//   {
+//     id: 4,
+//     question: "Can you share your personal event invitation in the UZ IT COMMUNITY chat?",
+//     options: [
+//       "Only if IT Community is co-organizer or you have permission",
+//       "Yes, if the event is free",
+//       "Only if it's a startup event",
+//     ],
+//     correctAnswer: "Only if IT Community is co-organizer or you have permission",
+//   },
+//   {
+//     id: 5,
+//     question: "Can you post job or internship opportunities?",
+//     options: [
+//       "Only with permission or if it’s exclusive to volunteers",
+//       "Yes, any opportunity is welcome",
+//       "Only if you tag an admin",
+//     ],
+//     correctAnswer: "Only with permission or if it’s exclusive to volunteers",
+//   },
+//   {
+//     id: 6,
+//     question: "Can you add your friend directly to the group?",
+//     options: [
+//       "No, they must be selected by admins",
+//       "Yes, if they’re a developer",
+//       "Only if they’re interested in IT",
+//     ],
+//     correctAnswer: "No, they must be selected by admins",
+//   },
+//   {
+//     id: 7,
+//     question: "Should you send 'hello' or 'how are you' as separate messages in the chat?",
+//     options: [
+//       "No, you should write your full message at once",
+//       "Yes, it’s a polite way to start",
+//       "Only on weekends",
+//     ],
+//     correctAnswer: "No, you should write your full message at once",
+//   },
+//   {
+//     id: 8,
+//     question: "What is the '2G Community' joke based on?",
+//     options: [
+//       "Replying very late in a thread",
+//       "Using outdated phones",
+//       "People who live in rural areas",
+//     ],
+//     correctAnswer: "Replying very late in a thread",
+//   },
+//   {
+//     id: 9,
+//     question: "Why is Roman called the most humble and handsome?",
+//     options: [
+//       "It started as a running group joke",
+//       "He won an internal vote",
+//       "He’s the official spokesperson",
+//     ],
+//     correctAnswer: "It started as a running group joke",
+//   },
+//   {
+//     id: 10,
+//     question: "What is the purpose of the 'Keling Tanishaylik' bot?",
+//     options: [
+//       "To help volunteers connect with each other",
+//       "To report inactive members",
+//       "To send weekly news updates",
+//     ],
+//     correctAnswer: "To help volunteers connect with each other",
+//   },
+//   {
+//     id: 11,
+//     question: "How do you participate in Keling Tanishaylik?",
+//     options: [
+//       "Vote in the poll and press start in the bot",
+//       "Send your phone number to an admin",
+//       "Write your name in the group",
+//     ],
+//     correctAnswer: "Vote in the poll and press start in the bot",
+//   },
+//   {
+//     id: 12,
+//     question: "Can you post birthday or holiday congratulations in the group?",
+//     options: [
+//       "No, it creates message spam",
+//       "Yes, but only for admins",
+//       "Only on your own birthday",
+//     ],
+//     correctAnswer: "No, it creates message spam",
+//   },
+//   {
+//     id: 13,
+//     question: "Can you discuss politics, religion, or personal topics in the chat?",
+//     options: [
+//       "No, keep it relevant to volunteering and IT",
+//       "Yes, as long as it's respectful",
+//       "Only with admin approval",
+//     ],
+//     correctAnswer: "No, keep it relevant to volunteering and IT",
+//   },
+//   {
+//     id: 14,
+//     question: "Are there official rules for the IT Community?",
+//     options: [
+//       "Yes, and they apply to the volunteer chat as well",
+//       "No, it’s informal",
+//       "Only for admins",
+//     ],
+//     correctAnswer: "Yes, and they apply to the volunteer chat as well",
+//   },
+//   {
+//     id: 15,
+//     question: "What format should your Telegram name follow?",
+//     options: [
+//       "Firstname Lastname in Latin using default font",
+//       "Emoji + Nickname",
+//       "Surname Firstname in Cyrillic",
+//     ],
+//     correctAnswer: "Firstname Lastname in Latin using default font",
+//   },
+//   {
+//     id: 16,
+//     question: "Is it required to have a Telegram username?",
+//     options: [
+//       "Yes, for easier tagging and communication",
+//       "No, it’s optional",
+//       "Only if you're an admin",
+//     ],
+//     correctAnswer: "Yes, for easier tagging and communication",
+//   },
+//   {
+//     id: 17,
+//     question: "What is 'Bazaar Day' in the UZ IT COMMUNITY chat?",
+//     options: [
+//       "A day to share your projects or social media links",
+//       "A day to buy and sell gadgets",
+//       "A community hackathon day",
+//     ],
+//     correctAnswer: "A day to share your projects or social media links",
+//   },
+//   {
+//     id: 18,
+//     question: "Where can you post anything you want (within ethical limits)?",
+//     options: [
+//       "In the open-source chat",
+//       "In the main volunteer group",
+//       "On any weekday in the main group",
+//     ],
+//     correctAnswer: "In the open-source chat",
+//   },
 ];
 
 export const explanations = {

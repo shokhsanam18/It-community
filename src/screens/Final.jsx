@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useQuestionStore } from "../store/useQuestionStore";
 import { useUserStore } from "../store/useUserStore";
 
@@ -25,7 +25,11 @@ export default function Final() {
     navigator.clipboard.writeText(introMessage);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
+    useUserStore.getState().resetUser()
   };
+
+
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] flex flex-col items-center justify-center text-center px-4 py-10">
@@ -86,14 +90,14 @@ export default function Final() {
           </button>
         </div>
       </div>
-      <a
-        href="https://t.me/+IJD9iZO7WyNhYTk6"
-        target="_blank"
+      <Link
+      onClick={() => useUserStore.getState().resetUser()}
+       to="https://t.me/+IJD9iZO7WyNhYTk6"
         rel="noopener noreferrer"
         className="bg-[#77c042] text-white mt-4 px-6 py-3 rounded-full font-semibold hover:bg-[#5cb452] transition mb-6 shadow"
       >
         Join Telegram Chat
-      </a>
+      </Link>
     </div>
   );
 }
