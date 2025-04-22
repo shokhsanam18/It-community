@@ -3,14 +3,13 @@ import { useLocation } from "react-router-dom";
 import { useQuestionStore } from "../store/useQuestionStore";
 import { useUserStore } from "../store/useUserStore";
 
-
 export default function Final() {
-    const { state } = useLocation();
-    const fullname = useUserStore((state) => state.fullname);
-const bio = useUserStore((state) => state.bio);
-const referrer = useUserStore((state) => state.referrer);
-const setBio = useUserStore((state) => state.setBio);
-const setReferrer = useUserStore((state) => state.setReferrer);
+  const { state } = useLocation();
+  const fullname = useUserStore((state) => state.fullname);
+  const bio = useUserStore((state) => state.bio);
+  const referrer = useUserStore((state) => state.referrer);
+  const setBio = useUserStore((state) => state.setBio);
+  const setReferrer = useUserStore((state) => state.setReferrer);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -30,10 +29,16 @@ const setReferrer = useUserStore((state) => state.setReferrer);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] flex flex-col items-center justify-center text-center px-4 py-10">
-      <img src="/logo.png" alt="Logo" className="w-40 mb-4" />
-      <h2 className="text-3xl font-bold text-green-700 mb-2">🎉 Congratulations!</h2>
-      <p className="text-gray-700 mb-6">You’ve successfully completed the volunteer onboarding path!</p>
+      <a href="https://itcom.uz/">
+        <img src="/logo.png" alt="Logo" className="w-40 mb-4" />
+      </a>
 
+      <h2 className="text-3xl font-bold text-green-700 mb-2">
+        🎉 Congratulations!
+      </h2>
+      <p className="text-gray-700 mb-6">
+        You’ve successfully completed the volunteer onboarding path!
+      </p>
 
       <div className="w-full max-w-md text-left bg-white p-6 rounded-xl shadow-md">
         <div className="mb-4">
@@ -57,7 +62,9 @@ const setReferrer = useUserStore((state) => state.setReferrer);
         </div>
 
         <div className="mb-4">
-          <label className="text-sm font-medium text-gray-700">Referred by</label>
+          <label className="text-sm font-medium text-gray-700">
+            Referred by
+          </label>
           <input
             type="text"
             className="w-full px-3 py-2 mt-1 border rounded"
@@ -68,7 +75,9 @@ const setReferrer = useUserStore((state) => state.setReferrer);
         </div>
 
         <div className="bg-green-50 border border-green-200 p-4 rounded mt-6">
-          <p className="text-sm text-gray-800 whitespace-pre-wrap">{introMessage}</p>
+          <p className="text-sm text-gray-800 whitespace-pre-wrap">
+            {introMessage}
+          </p>
           <button
             onClick={handleCopy}
             className="mt-3 px-4 py-2 bg-[#77c042] text-white rounded-full font-medium hover:bg-[#5cb452] transition"
@@ -76,7 +85,6 @@ const setReferrer = useUserStore((state) => state.setReferrer);
             {copied ? "Copied!" : "Copy to Clipboard"}
           </button>
         </div>
-
       </div>
       <a
         href="https://t.me/+IJD9iZO7WyNhYTk6"
