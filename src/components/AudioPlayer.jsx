@@ -19,19 +19,17 @@ export default function AudioPlayer() {
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
-
+  
     setAudioRef(audio);
     audio.muted = isMuted;
-
+  
     if (allowedPaths.includes(location.pathname)) {
       if (!audioStarted) {
         audio.volume = 0;
-
         audio.play()
           .then(() => {
             setAudioStarted(true);
             setMusicPlaying(true);
-
             const fadeIn = setInterval(() => {
               if (audio.volume < 1) {
                 audio.volume = Math.min(1, audio.volume + 0.1);
@@ -41,11 +39,15 @@ export default function AudioPlayer() {
             }, 200);
           })
           .catch((err) => {
-            console.warn("Autoplay blocked:", err.message);
-            setShowEnableToast(true);
+            setTimeout(() => {
+              if (!audioStarted) {
+                setShowEnableToast(true);
+              }
+            }, 200);
           });
       }
     } else {
+      // ✅ Always stop music if not allowed
       if (!audio.paused) {
         audio.pause();
         setMusicPlaying(false);
@@ -53,11 +55,12 @@ export default function AudioPlayer() {
     }
   }, [
     location.pathname,
-    setAudioRef,
-    setMusicPlaying,
+    audioRef,
     isMuted,
     audioStarted,
+    setAudioRef,
     setAudioStarted,
+    setMusicPlaying,
     setShowEnableToast,
   ]);
 
