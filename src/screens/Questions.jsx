@@ -140,7 +140,7 @@ export const Questions = () => {
         <button
           onClick={onSubmit}
           disabled={!answers[currentQuestion.id] || showFireworks}
-          className={`w-full mt-6 py-3 rounded-full font-medium transition ${
+          className={`w-full mt-6 py-3 cursor-pointer rounded-full font-medium transition ${
             answers[currentQuestion.id]
               ? "bg-[#77c042] hover:bg-[#5cb452] text-white"
               : "bg-gray-300 text-gray-500 cursor-not-allowed"

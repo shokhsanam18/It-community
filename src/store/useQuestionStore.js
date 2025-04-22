@@ -133,6 +133,8 @@ export const useQuestionStore = create(
       partialize: (state) => ({
         currentQuestionIndex: state.currentQuestionIndex,
         answers: state.answers,
+        questions: state.questions,
+        totalQuestions: state.totalQuestions,
       }),
     }
   )
