@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useAudioStore } from "../store/useAudioStore";
+import useIsMobile from "../hooks/useIsMobile"; // 👈
 
 export default function EnableMusicToast() {
+  const isMobile = useIsMobile(); // 👈
   const {
     audioRef,
     setShowEnableToast,
@@ -12,7 +14,7 @@ export default function EnableMusicToast() {
   } = useAudioStore();
 
   useEffect(() => {
-    if (!audioRef || audioStarted) return;
+    if (isMobile || !audioRef || audioStarted) return;
 
     const handleUserInteraction = () => {
       if (audioStarted) return;
@@ -38,15 +40,12 @@ export default function EnableMusicToast() {
                 }
               }, 200);
             })
-            .catch((err) => {
-              console.error("❌ play() failed on interaction:", err);
-            });
+            .catch(console.error);
         }
       } catch (err) {
-        console.error("❗ Unexpected error in toast:", err);
+        console.error(err);
       }
 
-      // Clean up
       window.removeEventListener("click", handleUserInteraction);
       window.removeEventListener("keydown", handleUserInteraction);
       window.removeEventListener("touchstart", handleUserInteraction);
@@ -61,15 +60,9 @@ export default function EnableMusicToast() {
       window.removeEventListener("keydown", handleUserInteraction);
       window.removeEventListener("touchstart", handleUserInteraction);
     };
-  }, [
-    audioRef,
-    audioStarted,
-    setShowEnableToast,
-    setAudioStarted,
-    setMusicPlaying,
-    setMuted,
-  ]);
+  }, [isMobile, audioRef, audioStarted]);
 
+  if (isMobile) return null; // 👈 no toast on mobile
   return (
     <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[#333] text-white px-4 py-2 rounded-lg shadow-lg z-50">
       Tap anywhere to enable background music 🎵
