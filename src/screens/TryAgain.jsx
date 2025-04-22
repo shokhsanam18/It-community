@@ -15,14 +15,16 @@ export default function TryAgain() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] flex flex-col items-center justify-center text-center px-4 py-10 relative">
       <MusicToggle />
-      <img src="/logo.png" alt="Logo" className="w-44 mb-6" />
+      <a href="https://itcom.uz/">
+        <img src="/logo.png" alt="Logo" className="w-44 mb-6" />
+      </a>
 
       <h2 className="text-3xl font-semibold text-red-600 mb-4 animate-fade-in-up">
         Oops! Not quite there.
       </h2>
       <p className="text-gray-700 max-w-md mb-6 animate-fade-in-up delay-100">
-        Some of your answers were incorrect. But don’t worry — you can try again!
-        Review the rules and give it another go. You've got this! 💪
+        Some of your answers were incorrect. But don’t worry — you can try
+        again! Review the rules and give it another go. You've got this! 💪
       </p>
 
       <button
