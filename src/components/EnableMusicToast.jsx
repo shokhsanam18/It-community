@@ -8,25 +8,28 @@ export default function EnableMusicToast() {
     setAudioStarted,
     setMusicPlaying,
     setMuted,
+    audioStarted,
   } = useAudioStore();
 
   useEffect(() => {
-    if (!audioRef) return; // Wait for the <audio> to be registered
-  
+    if (!audioRef || audioStarted) return;
+
     const handleUserInteraction = () => {
+      if (audioStarted) return;
+
       try {
         audioRef.muted = false;
         audioRef.volume = 0;
         setMuted(false);
-  
+
         const playPromise = audioRef.play();
         if (playPromise !== undefined) {
           playPromise
             .then(() => {
               setAudioStarted(true);
               setMusicPlaying(true);
-              setShowEnableToast(false); // ✅ hide toast after successful play
-  
+              setShowEnableToast(false);
+
               const fadeIn = setInterval(() => {
                 if (audioRef.volume < 1) {
                   audioRef.volume = Math.min(1, audioRef.volume + 0.1);
@@ -36,29 +39,36 @@ export default function EnableMusicToast() {
               }, 200);
             })
             .catch((err) => {
-              console.error("❌ Audio play() failed:", err);
+              console.error("❌ play() failed on interaction:", err);
             });
         }
       } catch (err) {
-        console.error("❗ Error in enabling audio:", err);
+        console.error("❗ Unexpected error in toast:", err);
       }
-  
-      // ✅ Clean up
+
+      // Clean up
       window.removeEventListener("click", handleUserInteraction);
-      window.removeEventListener("touchstart", handleUserInteraction);
       window.removeEventListener("keydown", handleUserInteraction);
+      window.removeEventListener("touchstart", handleUserInteraction);
     };
-  
+
     window.addEventListener("click", handleUserInteraction);
-    window.addEventListener("touchstart", handleUserInteraction);
     window.addEventListener("keydown", handleUserInteraction);
-  
+    window.addEventListener("touchstart", handleUserInteraction);
+
     return () => {
       window.removeEventListener("click", handleUserInteraction);
-      window.removeEventListener("touchstart", handleUserInteraction);
       window.removeEventListener("keydown", handleUserInteraction);
+      window.removeEventListener("touchstart", handleUserInteraction);
     };
-  }, [audioRef]); // ✅ only register once audioRef is ready
+  }, [
+    audioRef,
+    audioStarted,
+    setShowEnableToast,
+    setAudioStarted,
+    setMusicPlaying,
+    setMuted,
+  ]);
 
   return (
     <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[#333] text-white px-4 py-2 rounded-lg shadow-lg z-50">

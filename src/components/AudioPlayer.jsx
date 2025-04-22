@@ -14,22 +14,24 @@ export default function AudioPlayer() {
 
   const audioRef = useRef(null);
   const location = useLocation();
-  const allowedPaths = ["/", "/rules", "/tryagain",];
+  const allowedPaths = ["/", "/rules", "/tryagain"];
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
-  
+
     setAudioRef(audio);
     audio.muted = isMuted;
-  
+
     if (allowedPaths.includes(location.pathname)) {
       if (!audioStarted) {
         audio.volume = 0;
+
         audio.play()
           .then(() => {
             setAudioStarted(true);
             setMusicPlaying(true);
+
             const fadeIn = setInterval(() => {
               if (audio.volume < 1) {
                 audio.volume = Math.min(1, audio.volume + 0.1);
@@ -47,7 +49,6 @@ export default function AudioPlayer() {
           });
       }
     } else {
-      // ✅ Always stop music if not allowed
       if (!audio.paused) {
         audio.pause();
         setMusicPlaying(false);
@@ -55,12 +56,11 @@ export default function AudioPlayer() {
     }
   }, [
     location.pathname,
-    audioRef,
+    setAudioRef,
+    setMusicPlaying,
     isMuted,
     audioStarted,
-    setAudioRef,
     setAudioStarted,
-    setMusicPlaying,
     setShowEnableToast,
   ]);
 
