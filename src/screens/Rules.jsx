@@ -21,10 +21,8 @@ export default function Rules() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] px-4 py-8 relative flex flex-col items-center">
-      {/* Music Toggle */}
       <MusicToggle />
 
-      {/* Logo in top-left */}
       <a href="https://itcom.uz/">
         {" "}
         <img
@@ -33,13 +31,6 @@ export default function Rules() {
           className="absolute top-4 left-4 w-44"
         />
       </a>
-      {/* <img
-        src="/logo.png"
-        alt="IT Community Logo"
-        className="absolute top-4 left-4 w-44"
-      /> */}
-
-      {/* Headline */}
       <h2 className="text-3xl font-semibold text-gray-800 mt-20 text-center animate-fade-in-up">
         Community Guidelines &{" "}
         <span className="text-[#77c042]">Onboarding</span>
@@ -132,7 +123,6 @@ export default function Rules() {
         </ul>
       </div>
 
-      {/* Start Quest Button */}
       <button
         onClick={() => navigate("/Questions")}
         className="mt-6 px-6 py-3 cursor-pointer rounded-full font-medium text-white shadow-md bg-[#77c042] hover:bg-[#5cb452] transition-all duration-300 animate-fade-in-up delay-200"

@@ -35,13 +35,15 @@ export const questions = [
   },
   {
     id: 4,
-    question: "Can you share your personal event invitation in the UZ IT COMMUNITY chat?",
+    question:
+      "Can you share your personal event invitation in the UZ IT COMMUNITY chat?",
     options: [
       "Only if IT Community is co-organizer or you have permission",
       "Yes, if the event is free",
       "Only if it's a startup event",
     ],
-    correctAnswer: "Only if IT Community is co-organizer or you have permission",
+    correctAnswer:
+      "Only if IT Community is co-organizer or you have permission",
   },
   {
     id: 5,
@@ -65,7 +67,8 @@ export const questions = [
   },
   {
     id: 7,
-    question: "Should you send 'hello' or 'how are you' as separate messages in the chat?",
+    question:
+      "Should you send 'hello' or 'how are you' as separate messages in the chat?",
     options: [
       "No, you should write your full message at once",
       "Yes, it’s a polite way to start",
@@ -73,26 +76,26 @@ export const questions = [
     ],
     correctAnswer: "No, you should write your full message at once",
   },
-  {
-    id: 8,
-    question: "What is the '2G Community' joke based on?",
-    options: [
-      "Replying very late in a thread",
-      "Using outdated phones",
-      "People who live in rural areas",
-    ],
-    correctAnswer: "Replying very late in a thread",
-  },
-  {
-    id: 9,
-    question: "Why is Roman called the most humble and handsome?",
-    options: [
-      "It started as a running group joke",
-      "He won an internal vote",
-      "He’s the official spokesperson",
-    ],
-    correctAnswer: "It started as a running group joke",
-  },
+  // {
+  //   id: 8,
+  //   question: "What is the '2G Community' joke based on?",
+  //   options: [
+  //     "Replying very late in a thread",
+  //     "Using outdated phones",
+  //     "People who live in rural areas",
+  //   ],
+  //   correctAnswer: "Replying very late in a thread",
+  // },
+  // {
+  //   id: 9,
+  //   question: "Why is Roman called the most humble and handsome?",
+  //   options: [
+  //     "It started as a running group joke",
+  //     "He won an internal vote",
+  //     "He’s the official spokesperson",
+  //   ],
+  //   correctAnswer: "It started as a running group joke",
+  // },
   {
     id: 10,
     question: "What is the purpose of the 'Keling Tanishaylik' bot?",
@@ -125,7 +128,8 @@ export const questions = [
   },
   {
     id: 13,
-    question: "Can you discuss politics, religion, or personal topics in the chat?",
+    question:
+      "Can you discuss politics, religion, or personal topics in the chat?",
     options: [
       "No, keep it relevant to volunteering and IT",
       "Yes, as long as it's respectful",

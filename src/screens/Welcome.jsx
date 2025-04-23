@@ -4,10 +4,21 @@ import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { useAudioStore } from "../store/useAudioStore";
 import MusicToggle from "../components/MusicToggle";
 import { useUserStore } from "../store/useUserStore";
+import { useTelegram } from "../hooks/useTelegram";
 
 export default function Welcome() {
+  const { user, expand } = useTelegram();
   const fullname = useUserStore((state) => state.fullname);
   const setFullname = useUserStore((state) => state.setFullname);
+
+  useEffect(() => {
+    expand?.();
+
+    if (user?.first_name && !fullname) {
+      const name = `${user.first_name} ${user.last_name || ""}`.trim();
+      setFullname(name);
+    }
+  }, [user]);
   const navigate = useNavigate();
   const { setMusicPlaying } = useAudioStore();
 
@@ -19,7 +30,6 @@ export default function Welcome() {
   };
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] flex flex-col items-center justify-center px-4 text-center relative">
-      {/* Music Toggle */}
       <MusicToggle />
 
       {/* Logo */}
@@ -60,7 +70,6 @@ export default function Welcome() {
         Start Game
       </button>
 
-      {/* Instructions */}
       <p className="text-sm text-gray-500 mt-4 max-w-xs">
         Enter your name and begin your onboarding journey!
       </p>

@@ -13,7 +13,7 @@ export const useUserStore = create(
       resetUser: () => set({ fullname: "", bio: "", referrer: "" }),
     }),
     {
-      name: "user-store", // key in localStorage
+      name: "user-store",
     }
   )
 );

@@ -14,7 +14,6 @@ function App() {
   const { showEnableToast } = useAudioStore();
   return (
     <>
-      {/* AudioPlayer is mounted ONCE, above all routes */}
       <AudioPlayer />
 
       {showEnableToast && <EnableMusicToast />}

@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { useAudioStore } from "../store/useAudioStore";
 import { useLocation } from "react-router-dom";
+import { useAudioStore } from "../store/useAudioStore";
+import useIsMobile from "../hooks/useIsMobile"; 
 
 export default function AudioPlayer() {
+  const isMobile = useIsMobile();
   const {
     setAudioRef,
     setMusicPlaying,
@@ -14,9 +16,10 @@ export default function AudioPlayer() {
 
   const audioRef = useRef(null);
   const location = useLocation();
-  const allowedPaths = ["/", "/rules", "/tryagain",];
+  const allowedPaths = ["/", "/rules", "/tryagain"];
 
   useEffect(() => {
+    if (isMobile) return; 
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -40,9 +43,10 @@ export default function AudioPlayer() {
               }
             }, 200);
           })
-          .catch((err) => {
-            console.warn("Autoplay blocked:", err.message);
-            setShowEnableToast(true);
+          .catch(() => {
+            setTimeout(() => {
+              if (!audioStarted) setShowEnableToast(true);
+            }, 200);
           });
       }
     } else {
@@ -52,6 +56,7 @@ export default function AudioPlayer() {
       }
     }
   }, [
+    isMobile,
     location.pathname,
     setAudioRef,
     setMusicPlaying,
@@ -61,6 +66,7 @@ export default function AudioPlayer() {
     setShowEnableToast,
   ]);
 
+  if (isMobile) return null; 
   return (
     <audio
       ref={audioRef}

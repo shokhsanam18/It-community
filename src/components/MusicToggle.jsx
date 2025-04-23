@@ -1,13 +1,16 @@
 import React from "react";
 import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { useAudioStore } from "../store/useAudioStore";
+import useIsMobile from "../hooks/useIsMobile"; 
 
 export default function MusicToggle() {
+  const isMobile = useIsMobile(); 
   const { isMuted, setMuted, audioRef } = useAudioStore();
+
+  if (isMobile) return null; 
 
   const toggleMute = () => {
     if (!audioRef) return;
-
     const newMuted = !isMuted;
     audioRef.muted = newMuted;
     setMuted(newMuted);
