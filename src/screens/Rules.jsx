@@ -123,6 +123,52 @@ export default function Rules() {
         </ul>
       </div>
 
+      {/* <div className="bg-white rounded-xl shadow-lg mt-6 p-6 w-full max-w-2xl text-gray-700 animate-fade-in-up delay-100">
+        <h2 className="text-2xl font-semibold text-gray-800 text-left mb-2 animate-fade-in-up">
+          And also:
+        </h2>
+        <ul className="list-disc list-inside space-y-3 text-left leading-relaxed">
+          <li>
+            <span className="text-[#77c042] font-semibold">2G Community: </span>
+            lorem
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">
+              Keling Tanishaylik:
+            </span>{" "}
+            lorem
+          </li>
+          <li>
+            <span className="text-[#77c042] font-semibold">Bazaar Day:</span>{" "}
+            lorem
+          </li>
+        </ul>
+      </div> */}
+
+      <div className="bg-white rounded-xl shadow-lg mt-6 p-6 w-full max-w-2xl text-gray-700 animate-fade-in-up delay-100">
+        <h2 className="text-2xl font-semibold text-gray-800 text-center animate-fade-in-up mb-5">
+          {" "}
+          What is the <span className="text-[#77c042]">IT COMMUNITY </span> for
+          you?
+        </h2>
+        <p>
+          The IT Community is a space where tech enthusiasts grow, connect, and
+          support each other.
+        </p>
+        <ul className=" list-inside space-y-3 text-left leading-relaxed mt-4 list-none mb-5">
+          <li>🤗 Welcoming and friendly environment</li>
+          <li>🙌 Always helping and learning from each other</li>
+          <li>🚀 Real projects you can join and contribute to</li>
+          <li>🏢 Demo Days – visits to top tech companies and their campuse</li>
+          <li>🎯 Access to exclusive internships and job offers</li>
+          <li>🎁 Merch & certificates for active volunteers</li>
+          <li>🗓 Weekly meetups with other motivated members</li>
+        </ul>
+        <p>
+          It’s not just a community — it’s where <b>leaders</b> are born.
+        </p>
+      </div>
+
       <button
         onClick={() => navigate("/Questions")}
         className="mt-6 px-6 py-3 cursor-pointer rounded-full font-medium text-white shadow-md bg-[#77c042] hover:bg-[#5cb452] transition-all duration-300 animate-fade-in-up delay-200"
