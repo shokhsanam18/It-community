@@ -12,7 +12,6 @@ const IncorrectModal = ({ navigate }) => {
     questions,
   } = useQuestionStore();
 
-  // 🧠 Get the question manually based on current index
   const currentQuestion = questions[currentQuestionIndex];
 
   if (!showModal || !currentQuestion) return null;

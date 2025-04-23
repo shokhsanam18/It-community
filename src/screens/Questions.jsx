@@ -69,8 +69,6 @@ export const Questions = () => {
       {showFireworks && <Confetti width={window.innerWidth} recycle={false} numberOfPieces={1200} gravity={0.2} wind={0.01} initialVelocityY={10} />}
       <ToastContainer />
 
-      {/* Checkpoint Map (optional) */}
-      {/* Map */}
       <div
         className="flex items-center justify-center mb-8 flex-wrap gap-3 max-w-5xl"
         role="navigation"
@@ -106,9 +104,6 @@ export const Questions = () => {
           );
         })}
       </div>
-      {/* Your existing checkpoint rendering code here */}
-
-      {/* Question Card */}
       <div className="w-full max-w-2xl bg-white p-6 rounded-xl text-center border shadow-lg">
         <p className="text-lg font-semibold text-gray-800 mb-4">{currentQuestion.question}</p>
 
@@ -150,7 +145,6 @@ export const Questions = () => {
         </button>
       </div>
 
-      {/* Progress Bar */}
       <div className="w-full max-w-2xl mt-4">
         <div className="bg-gray-200 h-3 rounded-full">
           <div

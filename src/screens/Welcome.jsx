@@ -12,7 +12,7 @@ export default function Welcome() {
   const setFullname = useUserStore((state) => state.setFullname);
 
   useEffect(() => {
-    expand?.(); // open full screen in Telegram
+    expand?.(); 
 
     if (user?.first_name && !fullname) {
       const name = `${user.first_name} ${user.last_name || ""}`.trim();
@@ -30,10 +30,9 @@ export default function Welcome() {
   };
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] flex flex-col items-center justify-center px-4 text-center relative">
-      {/* Music Toggle */}
+
       <MusicToggle />
 
-      {/* Logo */}
       <a href="hhtps://itcom.uz/">
         <img
           src="/logo.png"
@@ -71,7 +70,6 @@ export default function Welcome() {
         Start Game
       </button>
 
-      {/* Instructions */}
       <p className="text-sm text-gray-500 mt-4 max-w-xs">
         Enter your name and begin your onboarding journey!
       </p>

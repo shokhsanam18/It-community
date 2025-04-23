@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useAudioStore } from "../store/useAudioStore";
-import useIsMobile from "../hooks/useIsMobile"; // 👈
+import useIsMobile from "../hooks/useIsMobile";
 
 export default function EnableMusicToast() {
-  const isMobile = useIsMobile(); // 👈
+  const isMobile = useIsMobile(); 
   const {
     audioRef,
     setShowEnableToast,
@@ -62,7 +62,7 @@ export default function EnableMusicToast() {
     };
   }, [isMobile, audioRef, audioStarted]);
 
-  if (isMobile) return null; // 👈 no toast on mobile
+  if (isMobile) return null; 
   return (
     <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-[#333] text-white px-4 py-2 rounded-lg shadow-lg z-50">
       Tap anywhere to enable background music 🎵

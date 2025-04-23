@@ -69,7 +69,6 @@ export const useQuestionStore = create(
           const FADE_DURATION = 1000;
           const fadeStep = 50;
       
-          // Start fading out 1s before the end
           setTimeout(() => {
             const fadeInterval = setInterval(() => {
               if (audio.volume > 0.05) {
@@ -82,7 +81,6 @@ export const useQuestionStore = create(
             }, fadeStep);
           }, CELEBRATION_DURATION - FADE_DURATION);
       
-          // Go to next question after confetti and fade-out
           setTimeout(() => {
             setShowFireworks(false);
             goNext(navigate);

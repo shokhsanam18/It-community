@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { useAudioStore } from "../store/useAudioStore";
-import useIsMobile from "../hooks/useIsMobile"; // 👈
+import useIsMobile from "../hooks/useIsMobile"; 
 
 export default function AudioPlayer() {
-  const isMobile = useIsMobile(); // 👈
+  const isMobile = useIsMobile();
   const {
     setAudioRef,
     setMusicPlaying,
@@ -19,8 +19,7 @@ export default function AudioPlayer() {
   const allowedPaths = ["/", "/rules", "/tryagain"];
 
   useEffect(() => {
-    if (isMobile) return; // 👈 skip music on mobile
-
+    if (isMobile) return; 
     const audio = audioRef.current;
     if (!audio) return;
 
@@ -67,7 +66,7 @@ export default function AudioPlayer() {
     setShowEnableToast,
   ]);
 
-  if (isMobile) return null; // 👈 don't render <audio> on mobile
+  if (isMobile) return null; 
   return (
     <audio
       ref={audioRef}

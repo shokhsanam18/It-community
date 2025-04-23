@@ -13,7 +13,7 @@ export default function Final() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    useQuestionStore.persist?.clearStorage?.(); // if using persist plugin
+    useQuestionStore.persist?.clearStorage?.(); 
     useQuestionStore.setState({ currentQuestionIndex: 0, answers: {} });
   }, []);
 

@@ -9,7 +9,6 @@ const GameCanvas = ({ width = 40, height = 40 }) => {
 
     class GameScene extends Phaser.Scene {
       preload() {
-        // Load the character sprite (mushroom)
         this.load.image(
           "player",
           "https://raw.githubusercontent.com/photonstorm/phaser3-examples/master/public/assets/sprites/mushroom16x16.png"
@@ -17,13 +16,11 @@ const GameCanvas = ({ width = 40, height = 40 }) => {
       }
 
       create() {
-        // Add player sprite in center
         this.player = this.physics.add
           .sprite(width / 2, height / 2, "player")
           .setScale(1.2)
           .setOrigin(0.5);
 
-        // Physics configs
         this.player.setCollideWorldBounds(true);
         this.player.setDamping(true);
         this.player.setDrag(300);
@@ -36,7 +33,6 @@ const GameCanvas = ({ width = 40, height = 40 }) => {
         const accel = 200;
         const player = this.player;
 
-        // Movement controls
         if (this.cursors.left.isDown) {
           player.setAccelerationX(-accel);
           player.setRotation(-0.15);
@@ -55,7 +51,6 @@ const GameCanvas = ({ width = 40, height = 40 }) => {
           player.setAccelerationY(0);
         }
 
-        // Reset rotation
         if (!this.cursors.left.isDown && !this.cursors.right.isDown) {
           player.setRotation(0);
         }
