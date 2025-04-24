@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useQuestionStore } from "../store/useQuestionStore";
 import { useUserStore } from "../store/useUserStore";
+import MusicToggle from "../components/MusicToggle";
 
 export default function Final() {
   const { state } = useLocation();
@@ -33,6 +34,8 @@ export default function Final() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] flex flex-col items-center justify-center text-center px-4 py-10">
+      <MusicToggle />
+      
       <a href="https://itcom.uz/">
         <img src="/logo.png" alt="Logo" className="w-40 mb-4" />
       </a>

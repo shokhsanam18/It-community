@@ -65,8 +65,79 @@ export const questions = [
     ],
     correctAnswer: "No, they must be selected by admins",
   },
+  {
+    id: 7,
+    question: "Can you post birthday or holiday congratulations in the group?",
+    options: [
+      "No, it creates message spam",
+      "Yes, but only for admins",
+      "Only on your own birthday",
+    ],
+    correctAnswer: "No, it creates message spam",
+  },
+  {
+    id: 8,
+    question:
+    "Can you discuss politics, religion, or personal topics in the chat?",
+    options: [
+      "No, keep it relevant to volunteering and IT",
+      "Yes, as long as it's respectful",
+      "Only with admin approval",
+    ],
+    correctAnswer: "No, keep it relevant to volunteering and IT",
+  },
+  {
+    id: 9,
+    question: "Are there official rules for the IT Community?",
+    options: [
+      "Yes, and they apply to the volunteer chat as well",
+      "No, it’s informal",
+      "Only for admins",
+    ],
+    correctAnswer: "Yes, and they apply to the volunteer chat as well",
+  },
+  {
+    id: 10,
+    question: "Where can you post anything you want (within ethical limits)?",
+    options: [
+      "In the open-source chat",
+      "In the main volunteer group",
+      "On any weekday in the main group",
+    ],
+    correctAnswer: "In the open-source chat",
+  },
   // {
-  //   id: 7,
+    //   id: 11,
+    //   question: "What format should your Telegram name follow?",
+    //   options: [
+  //     "Firstname Lastname in Latin using default font",
+  //     "Emoji + Nickname",
+  //     "Surname Firstname in Cyrillic",
+  //   ],
+  //   correctAnswer: "Firstname Lastname in Latin using default font",
+  // },
+  // {
+    //   id: 12,
+  //   question: "Is it required to have a Telegram username?",
+  //   options: [
+  //     "Yes, for easier tagging and communication",
+  //     "No, it’s optional",
+  //     "Only if you're an admin",
+  //   ],
+  //   correctAnswer: "Yes, for easier tagging and communication",
+  // },
+  // {
+    //   id: 13,
+  //   question: "What is 'Bazaar Day' in the UZ IT COMMUNITY chat?",
+  //   options: [
+    //     "A day to share your projects or social media links",
+    //     "A day to buy and sell gadgets",
+  //     "A community hackathon day",
+  //   ],
+  //   correctAnswer: "A day to share your projects or social media links",
+  // },
+  // {
+  //   id: 14,
   //   question:
   //     "Should you send 'hello' or 'how are you' as separate messages in the chat?",
   //   options: [
@@ -77,7 +148,7 @@ export const questions = [
   //   correctAnswer: "No, you should write your full message at once",
   // },
   // {
-  //   id: 8,
+  //   id: 15,
   //   question: "What is the '2G Community' joke based on?",
   //   options: [
   //     "Replying very late in a thread",
@@ -87,7 +158,7 @@ export const questions = [
   //   correctAnswer: "Replying very late in a thread",
   // },
   // {
-  //   id: 9,
+  //   id: 16,
   //   question: "Why is Roman called the most humble and handsome?",
   //   options: [
   //     "It started as a running group joke",
@@ -97,7 +168,7 @@ export const questions = [
   //   correctAnswer: "It started as a running group joke",
   // },
   // {
-  //   id: 10,
+  //   id: 17,
   //   question: "What is the purpose of the 'Keling Tanishaylik' bot?",
   //   options: [
   //     "To help volunteers connect with each other",
@@ -107,7 +178,7 @@ export const questions = [
   //   correctAnswer: "To help volunteers connect with each other",
   // },
   // {
-  //   id: 11,
+  //   id: 18,
   //   question: "How do you participate in Keling Tanishaylik?",
   //   options: [
   //     "Vote in the poll and press start in the bot",
@@ -116,77 +187,6 @@ export const questions = [
   //   ],
   //   correctAnswer: "Vote in the poll and press start in the bot",
   // },
-  {
-    id: 12,
-    question: "Can you post birthday or holiday congratulations in the group?",
-    options: [
-      "No, it creates message spam",
-      "Yes, but only for admins",
-      "Only on your own birthday",
-    ],
-    correctAnswer: "No, it creates message spam",
-  },
-  {
-    id: 13,
-    question:
-      "Can you discuss politics, religion, or personal topics in the chat?",
-    options: [
-      "No, keep it relevant to volunteering and IT",
-      "Yes, as long as it's respectful",
-      "Only with admin approval",
-    ],
-    correctAnswer: "No, keep it relevant to volunteering and IT",
-  },
-  {
-    id: 14,
-    question: "Are there official rules for the IT Community?",
-    options: [
-      "Yes, and they apply to the volunteer chat as well",
-      "No, it’s informal",
-      "Only for admins",
-    ],
-    correctAnswer: "Yes, and they apply to the volunteer chat as well",
-  },
-  // {
-  //   id: 15,
-  //   question: "What format should your Telegram name follow?",
-  //   options: [
-  //     "Firstname Lastname in Latin using default font",
-  //     "Emoji + Nickname",
-  //     "Surname Firstname in Cyrillic",
-  //   ],
-  //   correctAnswer: "Firstname Lastname in Latin using default font",
-  // },
-  // {
-  //   id: 16,
-  //   question: "Is it required to have a Telegram username?",
-  //   options: [
-  //     "Yes, for easier tagging and communication",
-  //     "No, it’s optional",
-  //     "Only if you're an admin",
-  //   ],
-  //   correctAnswer: "Yes, for easier tagging and communication",
-  // },
-  // {
-  //   id: 17,
-  //   question: "What is 'Bazaar Day' in the UZ IT COMMUNITY chat?",
-  //   options: [
-  //     "A day to share your projects or social media links",
-  //     "A day to buy and sell gadgets",
-  //     "A community hackathon day",
-  //   ],
-  //   correctAnswer: "A day to share your projects or social media links",
-  // },
-  {
-    id: 18,
-    question: "Where can you post anything you want (within ethical limits)?",
-    options: [
-      "In the open-source chat",
-      "In the main volunteer group",
-      "On any weekday in the main group",
-    ],
-    correctAnswer: "In the open-source chat",
-  },
 ];
 
 export const explanations = {
@@ -196,16 +196,16 @@ export const explanations = {
   4: "Only events co-organized by the IT Community or approved by Shavkat aka may be posted. P.S. we have an open-source chat where you can post whatever you want 😉(within ethical limits).",
   5: "You may only post vacancies with Shavkat aka's permission or if they are exclusive to IT Community volunteers.",
   6: "Only admins can add members. Others must contact admins for the selection process. You may contact Shavkat aka(@pulsopros) or @robiya_py, @OmgSoftCode, @camocec, @T_Shamsiddin, @smart_proger_go, @aleeeeeshka, @Fhfnndju, @Gulisa_Ibragimova, @nozima_sharifova and @MSA1005 they will do the selecting process and add your friend to the group.",
-  // 7: "Visit aka.ms/nohello — don’t send one-word messages like 'hello', just write your full thought.",
-  // 8: "The '2G Community' is a joke about replying late. The story: In the Shavkat aka's(@pulsopros) assistants' chat, one night Roman (@smart_proger_go) suddenly appeared, replying to the very first message of a long discussion thread. Then someone asked, “Maybe his phone is at 2G speed?” And from there, the joke took off and spread to the UZ IT COMMUNITY chat. The 2G Community is full of fun—we congratulate each other on long-past holidays, greet new members who joined ages ago, discuss past events, and just generally embrace the slow vibe. Naturally, Roman became the head of the 2G Community.",
-  // 9: "Roman jokingly called himself the most humble and handsome, and the group embraced it.",
-  // 10: "Keling Tanishaylik is a networking bot for volunteers to connect online or in-person. Every week (sometimes once in 2-3 weeks) Shavkat aka(@pulsopros) launches the bot which matches a team of people together, they then should meet and connect with each other in-person or online (Zoom, Google Meets etc.).",
-  // 11: "To join, vote in the weekly poll and press 'start' in the bot. Do not delete the bot chat. We even have special sticker for it!",
-  12: "Congratulating for birthdays/holidays floods the chat — instead, use the open-source chat.",
-  13: "Avoid politics, religion, or private topics. The focus is on team-related and relevant discussion.",
-  14: "Yes, there are official rules that apply to both the community and this volunteer group.",
-  // 15: "Your display name must follow 'Firstname Lastname' in Latin, using default font.",
-  // 16: "A username is required for easier communication and tagging. Many volunteers use 2 TG accounts.",
-  // 17: "Bazaar Day is the last Sunday of the month when you can promote your personal content.",
-  18: "Use the open-source chat to post anything (within ethical limits).",
+  7: "Congratulating for birthdays/holidays floods the chat — instead, use the open-source chat.",
+  8: "Avoid politics, religion, or private topics. The focus is on team-related and relevant discussion.",
+  9: "Yes, there are official rules that apply to both the community and this volunteer group.",
+  10: "Use the open-source chat to post anything (within ethical limits).",
+  // 11: "Visit aka.ms/nohello — don’t send one-word messages like 'hello', just write your full thought.",
+  // 12: "The '2G Community' is a joke about replying late. The story: In the Shavkat aka's(@pulsopros) assistants' chat, one night Roman (@smart_proger_go) suddenly appeared, replying to the very first message of a long discussion thread. Then someone asked, “Maybe his phone is at 2G speed?” And from there, the joke took off and spread to the UZ IT COMMUNITY chat. The 2G Community is full of fun—we congratulate each other on long-past holidays, greet new members who joined ages ago, discuss past events, and just generally embrace the slow vibe. Naturally, Roman became the head of the 2G Community.",
+  // 13: "Roman jokingly called himself the most humble and handsome, and the group embraced it.",
+  // 14: "Keling Tanishaylik is a networking bot for volunteers to connect online or in-person. Every week (sometimes once in 2-3 weeks) Shavkat aka(@pulsopros) launches the bot which matches a team of people together, they then should meet and connect with each other in-person or online (Zoom, Google Meets etc.).",
+  // 15: "To join, vote in the weekly poll and press 'start' in the bot. Do not delete the bot chat. We even have special sticker for it!",
+  // 16: "Your display name must follow 'Firstname Lastname' in Latin, using default font.",
+  // 17: "A username is required for easier communication and tagging. Many volunteers use 2 TG accounts.",
+  // 18: "Bazaar Day is the last Sunday of the month when you can promote your personal content.",
 };

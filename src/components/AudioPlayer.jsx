@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { useAudioStore } from "../store/useAudioStore";
-import useIsMobile from "../hooks/useIsMobile"; 
+import useIsMobile from "../hooks/useIsMobile";
 
 export default function AudioPlayer() {
   const isMobile = useIsMobile();
@@ -18,18 +18,27 @@ export default function AudioPlayer() {
   const location = useLocation();
   const allowedPaths = ["/", "/rules", "/tryagain"];
 
+  // 1️⃣ Reset audio state if switching to mobile
   useEffect(() => {
-    if (isMobile) return; 
+    if (isMobile) {
+      setAudioStarted(false);
+    }
+  }, [isMobile, setAudioStarted]);
+
+  useEffect(() => {
     const audio = audioRef.current;
-    if (!audio) return;
+
+    if (!audio || isMobile) return;
 
     setAudioRef(audio);
     audio.muted = isMuted;
 
-    if (allowedPaths.includes(location.pathname)) {
-      if (!audioStarted) {
-        audio.volume = 0;
+    // 2️⃣ Try playing again if audio hasn't started yet
+    if (!audioStarted) {
+      audio.volume = 0;
 
+      // Delay ensures the <audio> tag is ready before play
+      setTimeout(() => {
         audio.play()
           .then(() => {
             setAudioStarted(true);
@@ -45,28 +54,22 @@ export default function AudioPlayer() {
           })
           .catch(() => {
             setTimeout(() => {
-              if (!audioStarted) setShowEnableToast(true);
+              setShowEnableToast(true);
             }, 200);
           });
-      }
-    } else {
-      if (!audio.paused) {
-        audio.pause();
-        setMusicPlaying(false);
-      }
+      }, 100); // ⏱ slight delay to ensure DOM mounts first
     }
   }, [
     isMobile,
-    location.pathname,
-    setAudioRef,
-    setMusicPlaying,
     isMuted,
     audioStarted,
+    setAudioRef,
     setAudioStarted,
+    setMusicPlaying,
     setShowEnableToast,
   ]);
 
-  if (isMobile) return null; 
+  if (isMobile) return null;
   return (
     <audio
       ref={audioRef}
