@@ -31,7 +31,11 @@ export default function Welcome() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] flex flex-col items-center justify-center px-4 text-center relative">
       <MusicToggle />
-
+      <p className="mb-8 font-semibold text-lg text-gray-800">
+        <a href="https://itcom.uz/" target="_blank">
+          Tap here to go to official website
+        </a>
+      </p>
       {/* Logo */}
       <a href="https://itcom.uz/">
         <img
