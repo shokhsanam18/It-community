@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { questions as originalQuestions, explanations } from "../data/questions";
+import { questions as originalQuestions, explanations, questionsVersion } from "../data/questions";
 
 function shuffleArray(arr) {
   const array = [...arr];
@@ -18,6 +18,7 @@ export const useQuestionStore = create(
       answers: {},
       showFireworks: false,
       showModal: false,
+      version: questionsVersion,
       currentExplanation: "",
       questions: [],
       totalQuestions: 0,
@@ -27,13 +28,16 @@ export const useQuestionStore = create(
           ...q,
           options: shuffleArray(q.options),
         }));
-
+      
         set({
           questions: shuffledQuestions,
           totalQuestions: shuffledQuestions.length,
           currentQuestionIndex: 0,
           answers: {},
+          version: questionsVersion, // set latest version
         });
+      
+        useQuestionStore.persist.rehydrate(); // refresh persist
       },
 
       handleChange: (answer) => {

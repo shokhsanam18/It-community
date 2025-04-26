@@ -19,11 +19,17 @@ export const Questions = () => {
     showFireworks,
     showModal,
     initializeQuiz,
+    questionsVersion
   } = useQuestionStore();
 
 
   useEffect(() => {
-    if (!questions || questions.length === 0) {
+    const { questions, version, initializeQuiz, questionsVersion } = useQuestionStore.getState();
+
+    if (version !== questionsVersion) {
+      useQuestionStore.persist.clearStorage(); // Version mismatch? Clear old!
+      initializeQuiz();
+    } else if (!questions || questions.length === 0) {
       initializeQuiz();
     }
   }, []);
@@ -84,12 +90,12 @@ export const Questions = () => {
             <div key={index} className="relative">
               <div
                 className={`w-8 h-8 mb-5 sm:mb-2 rounded-full flex items-center justify-center text-sm font-bold border-2 transition-all duration-300 ${isCurrent
-                    ? "border-gray-600 bg-gray-200 animate-bounce text-green-800"
-                    : isCompleted
-                      ? answers[questions[index].id] === questions[index].correctAnswer
-                        ? "border-green-300 bg-green-300 text-white"
-                        : "border-red-400 bg-red-400 text-white"
-                      : "border-gray-300 bg-white text-gray-600"
+                  ? "border-gray-600 bg-gray-200 animate-bounce text-green-800"
+                  : isCompleted
+                    ? answers[questions[index].id] === questions[index].correctAnswer
+                      ? "border-green-300 bg-green-300 text-white"
+                      : "border-red-400 bg-red-400 text-white"
+                    : "border-gray-300 bg-white text-gray-600"
                   }`}
                 aria-current={isCurrent ? "step" : undefined}
                 aria-label={`Checkpoint ${index + 1}`}
@@ -136,8 +142,8 @@ export const Questions = () => {
           onClick={onSubmit}
           disabled={!answers[currentQuestion.id] || showFireworks}
           className={`w-full mt-6 py-3 cursor-pointer rounded-full font-medium transition ${answers[currentQuestion.id]
-              ? "bg-[#77c042] hover:bg-[#5cb452] text-white"
-              : "bg-gray-300 text-gray-500 cursor-not-allowed"
+            ? "bg-[#77c042] hover:bg-[#5cb452] text-white"
+            : "bg-gray-300 text-gray-500 cursor-not-allowed"
             }`}
         >
           {currentQuestionIndex < totalQuestions - 1 ? "Next" : "Submit"}
