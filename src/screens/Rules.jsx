@@ -138,7 +138,7 @@ export default function Rules() {
           className="absolute top-4 left-4 w-44"
         />
       </a>
-      <h2 className="text-3xl font-semibold text-gray-800 mt-20 text-center animate-fade-in-up">
+      <h2 className="text-3xl font-semibold text-gray-800 mt-14 text-center animate-fade-in-up">
         Community Guidelines &{" "}
         <span className="text-[#77c042]">Onboarding</span>
       </h2>
