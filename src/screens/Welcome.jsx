@@ -5,6 +5,7 @@ import { useAudioStore } from "../store/useAudioStore";
 import MusicToggle from "../components/MusicToggle";
 import { useUserStore } from "../store/useUserStore";
 import { useTelegram } from "../hooks/useTelegram";
+import { Button } from "@material-tailwind/react";
 
 export default function Welcome() {
   const { user, expand } = useTelegram();
