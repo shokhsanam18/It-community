@@ -17,9 +17,8 @@ const slides = [
     </h2>
     <ul className="list-disc list-inside space-y-3 text-left leading-relaxed">
       <li>
-        <span className="text-[#77c042] font-semibold">Language:</span> You can
-        write your posts and comments, or share content in Uzbek, Russian or
-        English languages.
+        <span className="text-[#77c042] font-semibold">Language:</span> You
+        should speak only in English, no Russian and Uzbek allowed.
       </li>
       <li>
         <span className="text-[#77c042] font-semibold">Theme:</span> Stay on
