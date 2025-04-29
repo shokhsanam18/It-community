@@ -35,7 +35,9 @@ export default function Welcome() {
       <button
         onClick={() => window.open("https://itcom.uz/", "_blank")}
         color="green"
-        className="font-semibold text-lg text-gray-800"
+        // className="font-semibold text-lg text-gray-800"
+        className={`px-6 mb-3 py-3 rounded-full font-medium text-white shadow-md transition-all duration-300 animate-fade-in-up delay-300 
+          bg-[#77c042] cursor-pointer hover:bg-[#5cb452]`}
       >
         Follow site
       </button>
