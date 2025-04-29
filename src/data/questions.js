@@ -1,130 +1,120 @@
-export const questionsVersion = 6;
+export const questionsVersion = 8;
 
 export const questions = [
   {
     id: 1,
-    question:
-      "What is the main purpose of the UZ IT COMMUNITY volunteer chat?",
+    question: "How does the UZ IT COMMUNITY volunteer chat help members grow?",
     options: [
-      "A place for community volunteers to connect and collaborate",
-      "A hub for general job postings",
-      "A public news and event channel",
+      "By providing a space to connect, collaborate and support each other",
+      "By sharing public news updates",
+      "By allowing open discussions on any topic",
     ],
-    correctAnswer: "A place for community volunteers to connect and collaborate",
+    correctAnswer:
+      "By providing a space to connect, collaborate and support each other",
   },
   {
     id: 2,
-    question:
-      "What type of content is appropriate to share in the UZ IT COMMUNITY chat?",
+    question: "What kind of content helps keep the community valuable for everyone?",
     options: [
-      "Content affiliated with the IT Community activities",
-      "Any random IT news",
-      "Any tech-related memes",
+      "Content related to IT Community projects and initiatives",
+      "Any tech news or gadgets",
+      "Funny memes and personal updates",
     ],
-    correctAnswer: "Content affiliated with the IT Community activities",
+    correctAnswer: "Content related to IT Community projects and initiatives",
   },
   {
     id: 3,
-    question:
-      "What should you do before sharing event pictures not affiliated with the IT Community?",
+    question: "How can you make sure your message is clear and respectful in the chat?",
     options: [
-      "Ask permission from Shavkat aka or an admin",
-      "Post them immediately if it's a tech event",
-      "Tag the event organizers",
+      "By writing your full message right away and staying on topic",
+      "By starting with 'hi' or 'hello' and waiting for a reply",
+      "By tagging multiple admins to get attention",
     ],
-    correctAnswer: "Ask permission from Shavkat aka or an admin",
+    correctAnswer: "By writing your full message right away and staying on topic",
   },
   {
     id: 4,
-    question:
-      "How can you share your event invitation in the UZ IT COMMUNITY chat?",
+    question: "How should you handle sharing job or internship opportunities?",
     options: [
-      "By ensuring the IT Community is a co-organizer or by getting permission",
-      "By sharing it if the event is free",
-      "By posting it if it's related to startups",
+      "Get permission or share exclusive offers for volunteers",
+      "Post any opportunity as long as it’s IT-related",
+      "Share links from Telegram channels",
     ],
-    correctAnswer:
-      "By ensuring the IT Community is a co-organizer or by getting permission",
+    correctAnswer: "Get permission or share exclusive offers for volunteers",
   },
   {
     id: 5,
-    question:
-      "How can you share job or internship opportunities in the UZ IT COMMUNITY chat?",
+    question: "What’s the best way to bring new people into the community?",
     options: [
-      "By getting admin approval or sharing exclusive volunteer offers",
-      "By posting any job openings",
-      "By tagging admins after posting",
+      "Ask admins to review and add the person",
+      "Invite your friends directly to the group",
+      "Share the group link in other tech forums",
     ],
-    correctAnswer:
-      "By getting admin approval or sharing exclusive volunteer offers",
+    correctAnswer: "Ask admins to review and add the person",
   },
   {
     id: 6,
-    question:
-      "What is the correct way to invite someone to the UZ IT COMMUNITY chat?",
+    question: "What is a thoughtful way to celebrate birthdays or holidays?",
     options: [
-      "Request admins to select and add the new member",
-      "Add your friend directly to the group",
-      "Invite anyone interested in IT freely",
+      "Share greetings in the open-source chat",
+      "Post long congratulations in the volunteer group",
+      "Send private messages to everyone",
     ],
-    correctAnswer: "Request admins to select and add the new member",
+    correctAnswer: "Share greetings in the open-source chat",
   },
   {
     id: 7,
-    question:
-      "Where should you post birthday or holiday greetings instead of the main chat?",
+    question: "Which topics help keep the community focused and welcoming?",
     options: [
-      "In the open-source chat",
-      "In the volunteer group",
-      "In the job posting channel",
+      "IT volunteering, tech skills, and team updates",
+      "Politics, religion, and controversial news",
+      "Personal stories and non-tech events",
     ],
-    correctAnswer: "In the open-source chat",
+    correctAnswer: "IT volunteering, tech skills, and team updates",
   },
   {
     id: 8,
-    question:
-      "Which topics should you avoid discussing to keep the UZ IT COMMUNITY focused?",
+    question: "Where can you share personal or creative projects freely (within limits)?",
     options: [
-      "Politics, religion, and personal matters",
-      "Latest IT gadgets",
-      "New startup ideas",
+      "In the open-source chat",
+      "In the main volunteer group",
+      "In private messages to admins",
     ],
-    correctAnswer: "Politics, religion, and personal matters",
+    correctAnswer: "In the open-source chat",
   },
   {
     id: 9,
-    question:
-      "How are the rules of the IT Community related to the volunteer group?",
+    question: "What is a professional way to show discipline when attending ITC events?",
     options: [
-      "They apply equally to the volunteer chat",
-      "They apply only to admins",
-      "They are informal suggestions",
+      "Arrive 15 minutes early and be ready to contribute",
+      "Log in late and explain afterward",
+      "Only join if you’re leading the event",
     ],
-    correctAnswer: "They apply equally to the volunteer chat",
+    correctAnswer: "Arrive 15 minutes early and be ready to contribute",
   },
   {
     id: 10,
-    question:
-      "Where can you freely share your personal projects, within ethical limits?",
+    question: "How can you help create a respectful digital environment in the community?",
     options: [
-      "In the open-source chat",
-      "In the volunteer main group",
-      "In the IT Community announcements channel",
+      "Follow ethical communication and avoid harmful content",
+      "Debate controversial topics for engagement",
+      "Post memes to keep the vibe light",
     ],
-    correctAnswer: "In the open-source chat",
+    correctAnswer: "Follow ethical communication and avoid harmful content",
   },
 ];
 
 
+
 export const explanations = {
-  1: "The UZ IT COMMUNITY volunteer chat is dedicated to community volunteers connecting, collaborating, and sharing ideas. This space is designed to foster teamwork and mutual support.",
-  2: "Sharing content that is directly affiliated with IT Community activities keeps the chat focused and helps ensure that all conversations are aligned with the group’s mission and values.",
-  3: "Before sharing photos from events that aren’t directly linked to the IT Community, it's best to ask for permission from Shavkat aka or an admin. This way, you help maintain consistency and respect privacy.",
-  4: "When you want to share an event invitation, ensure that the IT Community is either a co-organizer or that you have obtained the necessary permission. This maintains clear communication and community standards.",
-  5: "Job and internship opportunities should be shared after getting proper admin approval or when they are exclusively available to IT Community volunteers. This keeps the chat organized and focused on exclusive opportunities.",
-  6: "Inviting someone to join the chat is best handled by contacting an admin. The selection process helps maintain a high-quality and engaged community experience.",
-  7: "For birthday or holiday greetings, using the open-source chat is encouraged. This keeps the main volunteer chat focused on its core topics while still celebrating special occasions in a dedicated space.",
-  8: "Keeping discussions centered on volunteering and IT topics means setting aside conversations about politics, religion, or personal matters. This approach ensures that everyone experiences a positive and focused community environment.",
-  9: "The official rules are designed to benefit both the IT Community and the volunteer chat. They offer a clear framework for maintaining a supportive, respectful, and productive environment.",
-  10: "The open-source chat is the ideal place to share personal projects and content within ethical limits. This way, the volunteer chat stays on topic while allowing creativity to flourish in the designated space.",
+  1: "The volunteer chat is designed for collaboration and mutual support, helping members grow through shared learning and teamwork.",
+  2: "Staying focused on IT Community-related content makes the space meaningful and ensures alignment with our mission.",
+  3: "Writing full, respectful messages right away helps conversations stay clear, efficient, and inclusive for everyone.",
+  4: "Opportunities should be community-first. Sharing approved or exclusive offers respects the group’s purpose and keeps the feed relevant.",
+  5: "New members should be selected by admins to ensure they’re aligned with the community’s goals and values.",
+  6: "Using the open-source chat for personal celebrations keeps the volunteer group focused while still fostering kindness.",
+  7: "Focusing on IT-related topics creates a welcoming, distraction-free environment where everyone can grow.",
+  8: "The open-source chat is the perfect space for creative freedom — a place to showcase your ideas without cluttering the main group.",
+  9: "Punctuality reflects professionalism. Arriving early shows you value the event and your fellow volunteers’ time.",
+  10: "Digital ethics help build trust and respect. Avoiding spam, sensitive topics, or harmful content keeps the community safe and welcoming.",
 };
