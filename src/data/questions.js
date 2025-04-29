@@ -1,213 +1,130 @@
-export const questionsVersion = 5;
+export const questionsVersion = 6;
 
 export const questions = [
   {
     id: 1,
     question:
-      "Is the UZ IT COMMUNITY chat the official public group of the IT Community of Uzbekistan?",
+      "What is the main purpose of the UZ IT COMMUNITY volunteer chat?",
     options: [
-      "No, it's a volunteer-only chat",
-      "Yes, it’s the main IT group",
-      "It's a job posting hub for the community",
+      "A place for community volunteers to connect and collaborate",
+      "A hub for general job postings",
+      "A public news and event channel",
     ],
-    correctAnswer: "No, it's a volunteer-only chat",
+    correctAnswer: "A place for community volunteers to connect and collaborate",
   },
   {
     id: 2,
     question:
-      "Can you post random IT-related content in the UZ IT COMMUNITY chat?",
+      "What type of content is appropriate to share in the UZ IT COMMUNITY chat?",
     options: [
-      "No, only content affiliated with the IT Community is allowed",
-      "Yes, any IT content is fine",
-      "Sure, if it’s interesting enough",
+      "Content affiliated with the IT Community activities",
+      "Any random IT news",
+      "Any tech-related memes",
     ],
-    correctAnswer:
-      "No, only content affiliated with the IT Community is allowed",
+    correctAnswer: "Content affiliated with the IT Community activities",
   },
   {
     id: 3,
     question:
-      "Can you share pictures from events that are not affiliated with the IT Community?",
+      "What should you do before sharing event pictures not affiliated with the IT Community?",
     options: [
-      "Only with Shavkat aka’s permission",
-      "Yes, if it was a tech event",
-      "Only if you mention the speakers",
+      "Ask permission from Shavkat aka or an admin",
+      "Post them immediately if it's a tech event",
+      "Tag the event organizers",
     ],
-    correctAnswer: "Only with Shavkat aka’s permission",
+    correctAnswer: "Ask permission from Shavkat aka or an admin",
   },
   {
     id: 4,
     question:
-      "Can you share your personal event invitation in the UZ IT COMMUNITY chat?",
+      "How can you share your event invitation in the UZ IT COMMUNITY chat?",
     options: [
-      "Only if IT Community is co-organizer or you have permission",
-      "Yes, if the event is free",
-      "Only if it's a startup event",
+      "By ensuring the IT Community is a co-organizer or by getting permission",
+      "By sharing it if the event is free",
+      "By posting it if it's related to startups",
     ],
     correctAnswer:
-      "Only if IT Community is co-organizer or you have permission",
+      "By ensuring the IT Community is a co-organizer or by getting permission",
   },
   {
     id: 5,
-    question: "Can you post job or internship opportunities?",
+    question:
+      "How can you share job or internship opportunities in the UZ IT COMMUNITY chat?",
     options: [
-      "Only with permission or if it’s exclusive to volunteers",
-      "Yes, any opportunity is welcome",
-      "Only if you tag an admin",
+      "By getting admin approval or sharing exclusive volunteer offers",
+      "By posting any job openings",
+      "By tagging admins after posting",
     ],
-    correctAnswer: "Only with permission or if it’s exclusive to volunteers",
+    correctAnswer:
+      "By getting admin approval or sharing exclusive volunteer offers",
   },
   {
     id: 6,
-    question: "Can you add your friend directly to the group?",
+    question:
+      "What is the correct way to invite someone to the UZ IT COMMUNITY chat?",
     options: [
-      "No, they must be selected by admins",
-      "Yes, if they’re a developer",
-      "Only if they’re interested in IT",
+      "Request admins to select and add the new member",
+      "Add your friend directly to the group",
+      "Invite anyone interested in IT freely",
     ],
-    correctAnswer: "No, they must be selected by admins",
+    correctAnswer: "Request admins to select and add the new member",
   },
   {
     id: 7,
-    question: "Can you post birthday or holiday congratulations in the group?",
+    question:
+      "Where should you post birthday or holiday greetings instead of the main chat?",
     options: [
-      "No, it creates message spam",
-      "Yes, but only for admins",
-      "Only on your own birthday",
+      "In the open-source chat",
+      "In the volunteer group",
+      "In the job posting channel",
     ],
-    correctAnswer: "No, it creates message spam",
+    correctAnswer: "In the open-source chat",
   },
   {
     id: 8,
     question:
-    "Can you discuss politics, religion, or personal topics in the chat?",
+      "Which topics should you avoid discussing to keep the UZ IT COMMUNITY focused?",
     options: [
-      "No, keep it relevant to volunteering and IT",
-      "Yes, as long as it's respectful",
-      "Only with admin approval",
+      "Politics, religion, and personal matters",
+      "Latest IT gadgets",
+      "New startup ideas",
     ],
-    correctAnswer: "No, keep it relevant to volunteering and IT",
+    correctAnswer: "Politics, religion, and personal matters",
   },
   {
     id: 9,
-    question: "Are there official rules for the IT Community?",
+    question:
+      "How are the rules of the IT Community related to the volunteer group?",
     options: [
-      "Yes, and they apply to the volunteer chat as well",
-      "No, it’s informal",
-      "Only for admins",
+      "They apply equally to the volunteer chat",
+      "They apply only to admins",
+      "They are informal suggestions",
     ],
-    correctAnswer: "Yes, and they apply to the volunteer chat as well",
+    correctAnswer: "They apply equally to the volunteer chat",
   },
   {
     id: 10,
-    question: "Where can you post anything you want (within ethical limits)?",
+    question:
+      "Where can you freely share your personal projects, within ethical limits?",
     options: [
       "In the open-source chat",
-      "In the main volunteer group",
-      "On any weekday in the main group",
+      "In the volunteer main group",
+      "In the IT Community announcements channel",
     ],
     correctAnswer: "In the open-source chat",
   },
-  // {
-    //   id: 11,
-    //   question: "What format should your Telegram name follow?",
-    //   options: [
-  //     "Firstname Lastname in Latin using default font",
-  //     "Emoji + Nickname",
-  //     "Surname Firstname in Cyrillic",
-  //   ],
-  //   correctAnswer: "Firstname Lastname in Latin using default font",
-  // },
-  // {
-    //   id: 12,
-  //   question: "Is it required to have a Telegram username?",
-  //   options: [
-  //     "Yes, for easier tagging and communication",
-  //     "No, it’s optional",
-  //     "Only if you're an admin",
-  //   ],
-  //   correctAnswer: "Yes, for easier tagging and communication",
-  // },
-  // {
-    //   id: 13,
-  //   question: "What is 'Bazaar Day' in the UZ IT COMMUNITY chat?",
-  //   options: [
-    //     "A day to share your projects or social media links",
-    //     "A day to buy and sell gadgets",
-  //     "A community hackathon day",
-  //   ],
-  //   correctAnswer: "A day to share your projects or social media links",
-  // },
-  // {
-  //   id: 14,
-  //   question:
-  //     "Should you send 'hello' or 'how are you' as separate messages in the chat?",
-  //   options: [
-  //     "No, you should write your full message at once",
-  //     "Yes, it’s a polite way to start",
-  //     "Only on weekends",
-  //   ],
-  //   correctAnswer: "No, you should write your full message at once",
-  // },
-  // {
-  //   id: 15,
-  //   question: "What is the '2G Community' joke based on?",
-  //   options: [
-  //     "Replying very late in a thread",
-  //     "Using outdated phones",
-  //     "People who live in rural areas",
-  //   ],
-  //   correctAnswer: "Replying very late in a thread",
-  // },
-  // {
-  //   id: 16,
-  //   question: "Why is Roman called the most humble and handsome?",
-  //   options: [
-  //     "It started as a running group joke",
-  //     "He won an internal vote",
-  //     "He’s the official spokesperson",
-  //   ],
-  //   correctAnswer: "It started as a running group joke",
-  // },
-  // {
-  //   id: 17,
-  //   question: "What is the purpose of the 'Keling Tanishaylik' bot?",
-  //   options: [
-  //     "To help volunteers connect with each other",
-  //     "To report inactive members",
-  //     "To send weekly news updates",
-  //   ],
-  //   correctAnswer: "To help volunteers connect with each other",
-  // },
-  // {
-  //   id: 18,
-  //   question: "How do you participate in Keling Tanishaylik?",
-  //   options: [
-  //     "Vote in the poll and press start in the bot",
-  //     "Send your phone number to an admin",
-  //     "Write your name in the group",
-  //   ],
-  //   correctAnswer: "Vote in the poll and press start in the bot",
-  // },
 ];
 
+
 export const explanations = {
-  1: "No, this is a volunteers' chat of 'IT Community of Uzbekistan' :)",
-  2: "The chat is for volunteers only. If content isn't affiliated with the community or Shavkat aka (@pulsopros), don't post it.",
-  3: "You may share photos only if the event is affiliated with IT Community of Uzbekistan or you have Shavkat aka's permission. e.g. you visited a cool event or organized one yourself, and you want to share the pictures of this event, should you do it? First, ask yourself, is our community affiliated (or partnered) with this event? if no, it's better not to post it without Shavkat aka's permission.",
-  4: "Only events co-organized by the IT Community or approved by Shavkat aka may be posted. P.S. we have an open-source chat where you can post whatever you want 😉(within ethical limits).",
-  5: "You may only post vacancies with Shavkat aka's permission or if they are exclusive to IT Community volunteers.",
-  6: "Only admins can add members. Others must contact admins for the selection process. You may contact Shavkat aka(@pulsopros) or @robiya_py, @OmgSoftCode, @camocec, @T_Shamsiddin, @smart_proger_go, @aleeeeeshka, @Fhfnndju, @Gulisa_Ibragimova, @nozima_sharifova and @MSA1005 they will do the selecting process and add your friend to the group.",
-  7: "Congratulating for birthdays/holidays floods the chat — instead, use the open-source chat.",
-  8: "Avoid politics, religion, or private topics. The focus is on team-related and relevant discussion.",
-  9: "Yes, there are official rules that apply to both the community and this volunteer group.",
-  10: "Use the open-source chat to post anything (within ethical limits).",
-  // 11: "Visit aka.ms/nohello — don’t send one-word messages like 'hello', just write your full thought.",
-  // 12: "The '2G Community' is a joke about replying late. The story: In the Shavkat aka's(@pulsopros) assistants' chat, one night Roman (@smart_proger_go) suddenly appeared, replying to the very first message of a long discussion thread. Then someone asked, “Maybe his phone is at 2G speed?” And from there, the joke took off and spread to the UZ IT COMMUNITY chat. The 2G Community is full of fun—we congratulate each other on long-past holidays, greet new members who joined ages ago, discuss past events, and just generally embrace the slow vibe. Naturally, Roman became the head of the 2G Community.",
-  // 13: "Roman jokingly called himself the most humble and handsome, and the group embraced it.",
-  // 14: "Keling Tanishaylik is a networking bot for volunteers to connect online or in-person. Every week (sometimes once in 2-3 weeks) Shavkat aka(@pulsopros) launches the bot which matches a team of people together, they then should meet and connect with each other in-person or online (Zoom, Google Meets etc.).",
-  // 15: "To join, vote in the weekly poll and press 'start' in the bot. Do not delete the bot chat. We even have special sticker for it!",
-  // 16: "Your display name must follow 'Firstname Lastname' in Latin, using default font.",
-  // 17: "A username is required for easier communication and tagging. Many volunteers use 2 TG accounts.",
-  // 18: "Bazaar Day is the last Sunday of the month when you can promote your personal content.",
+  1: "The UZ IT COMMUNITY volunteer chat is dedicated to community volunteers connecting, collaborating, and sharing ideas. This space is designed to foster teamwork and mutual support.",
+  2: "Sharing content that is directly affiliated with IT Community activities keeps the chat focused and helps ensure that all conversations are aligned with the group’s mission and values.",
+  3: "Before sharing photos from events that aren’t directly linked to the IT Community, it's best to ask for permission from Shavkat aka or an admin. This way, you help maintain consistency and respect privacy.",
+  4: "When you want to share an event invitation, ensure that the IT Community is either a co-organizer or that you have obtained the necessary permission. This maintains clear communication and community standards.",
+  5: "Job and internship opportunities should be shared after getting proper admin approval or when they are exclusively available to IT Community volunteers. This keeps the chat organized and focused on exclusive opportunities.",
+  6: "Inviting someone to join the chat is best handled by contacting an admin. The selection process helps maintain a high-quality and engaged community experience.",
+  7: "For birthday or holiday greetings, using the open-source chat is encouraged. This keeps the main volunteer chat focused on its core topics while still celebrating special occasions in a dedicated space.",
+  8: "Keeping discussions centered on volunteering and IT topics means setting aside conversations about politics, religion, or personal matters. This approach ensures that everyone experiences a positive and focused community environment.",
+  9: "The official rules are designed to benefit both the IT Community and the volunteer chat. They offer a clear framework for maintaining a supportive, respectful, and productive environment.",
+  10: "The open-source chat is the ideal place to share personal projects and content within ethical limits. This way, the volunteer chat stays on topic while allowing creativity to flourish in the designated space.",
 };

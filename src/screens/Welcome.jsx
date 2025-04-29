@@ -5,6 +5,7 @@ import { useAudioStore } from "../store/useAudioStore";
 import MusicToggle from "../components/MusicToggle";
 import { useUserStore } from "../store/useUserStore";
 import { useTelegram } from "../hooks/useTelegram";
+import { Button } from "@material-tailwind/react";
 
 export default function Welcome() {
   const { user, expand } = useTelegram();
@@ -31,19 +32,13 @@ export default function Welcome() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#e4e7e6] to-[#b0ddaa] flex flex-col items-center justify-center px-4 text-center relative">
       <MusicToggle />
-      <p className="mb-8 font-semibold text-lg text-gray-800">
-        <a href="https://itcom.uz/" target="_blank">
-          Tap here to go to official website
-        </a>
-      </p>
-      {/* Logo */}
-      <a href="https://itcom.uz/">
-        <img
-          src="/logo.png"
-          alt="IT Community Logo"
-          className="w-44 mb-3 animate-fade-in-up"
-        />
-      </a>
+      <button
+        onClick={() => window.open("https://itcom.uz/", "_blank")}
+        color="green"
+        className="font-semibold text-lg text-gray-800"
+      >
+        Follow site
+      </button>
 
       <h1 className="text-3xl font-semibold text-gray-800 mb-4 animate-fade-in-up delay-100">
         Welcome to <span className="text-[#77c042]">Commventure!</span>
@@ -65,11 +60,10 @@ export default function Welcome() {
       <button
         onClick={handleStart}
         disabled={!fullname.trim()}
-        className={`px-6 py-3 rounded-full font-medium text-white shadow-md transition-all duration-300 animate-fade-in-up delay-300 ${
-          fullname.trim()
+        className={`px-6 py-3 rounded-full font-medium text-white shadow-md transition-all duration-300 animate-fade-in-up delay-300 ${fullname.trim()
             ? "bg-[#77c042] cursor-pointer hover:bg-[#5cb452]"
             : "bg-[#828583] cursor-not-allowed"
-        }`}
+          }`}
       >
         Start Game
       </button>

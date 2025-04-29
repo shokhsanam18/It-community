@@ -30,12 +30,12 @@ export default function CustomCarousel({ slides, navigate }) {
   return (
     <div className="relative w-full max-w-2xl mt-6">
       <div
-        className="bg-white rounded-xl shadow-lg px-8 py-10 text-gray-700 animate-fade-in-up delay-100"
+        className="bg-white rounded-xl shadow-lg px-10 py-10 text-gray-700 animate-fade-in-up delay-100"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
         {/* Arrows */}
-        <div className="absolute top-1/2 left-4 -translate-y-1/2 z-10">
+        <div className="absolute top-1/2 left-1 -translate-y-1/2 z-10">
           <button
             onClick={prev}
             disabled={current === 0}
@@ -46,7 +46,7 @@ export default function CustomCarousel({ slides, navigate }) {
             <FaArrowLeft className="text-[#77c042]" />
           </button>
         </div>
-        <div className="absolute top-1/2 right-4 -translate-y-1/2 z-10">
+        <div className="absolute top-1/2 right-1 -translate-y-1/2 z-10">
           <button
             onClick={next}
             disabled={current === slides.length - 1}
