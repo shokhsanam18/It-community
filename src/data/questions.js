@@ -54,13 +54,13 @@ export const questions = [
   },
   {
     id: 6,
-    question: "What is a thoughtful way to celebrate birthdays or holidays?",
+    question: "What should you do before sharing a private message or screenshot from the group?",
     options: [
-      "Share greetings in the open-source chat",
-      "Post long congratulations in the volunteer group",
-      "Send private messages to everyone",
+      "Ask for consent from the person involved",
+      "Post it if it seems important",
+      "Share it only in the open-source chat",
     ],
-    correctAnswer: "Share greetings in the open-source chat",
+    correctAnswer: "Ask for consent from the person involved",
   },
   {
     id: 7,
@@ -112,7 +112,7 @@ export const explanations = {
   3: "Writing full, respectful messages right away helps conversations stay clear, efficient, and inclusive for everyone.",
   4: "Opportunities should be community-first. Sharing approved or exclusive offers respects the group’s purpose and keeps the feed relevant.",
   5: "New members should be selected by admins to ensure they’re aligned with the community’s goals and values.",
-  6: "Using the open-source chat for personal celebrations keeps the volunteer group focused while still fostering kindness.",
+  6: "Respecting privacy means never sharing screenshots or private messages without someone’s permission. It helps build trust and keeps the community safe.",
   7: "Focusing on IT-related topics creates a welcoming, distraction-free environment where everyone can grow.",
   8: "The open-source chat is the perfect space for creative freedom — a place to showcase your ideas without cluttering the main group.",
   9: "Punctuality reflects professionalism. Arriving early shows you value the event and your fellow volunteers’ time.",
