@@ -120,7 +120,7 @@ const slides = [
       <h2 className="text-2xl font-semibold text-gray-800 text-center animate-fade-in-up mb-5">
         {" "}
         What benefits you can get from{" "}
-        <span className="text-[#77c042]">IT COMMUNITY </span> ?
+        <span className="text-[#77c042]">IT COMMUNITY</span>?
       </h2>
       <p>
         The IT Community is a space where tech enthusiasts grow, connect, and
