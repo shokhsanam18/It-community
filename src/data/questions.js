@@ -67,20 +67,20 @@ export const questions = [
     ],
     correctAnswer: "No, they must be selected by admins",
   },
-  {
-    id: 7,
-    question: "Can you post birthday or holiday congratulations in the group?",
-    options: [
-      "No, it creates message spam",
-      "Yes, but only for admins",
-      "Only on your own birthday",
-    ],
-    correctAnswer: "No, it creates message spam",
-  },
+  // {
+  //   id: 7,
+  //   question: "Can you post birthday or holiday congratulations in the group?",
+  //   options: [
+  //     "No, it creates message spam",
+  //     "Yes, but only for admins",
+  //     "Only on your own birthday",
+  //   ],
+  //   correctAnswer: "No, it creates message spam",
+  // },
   {
     id: 8,
     question:
-    "Can you discuss politics, religion, or personal topics in the chat?",
+      "Can you discuss politics, religion, or personal topics in the chat?",
     options: [
       "No, keep it relevant to volunteering and IT",
       "Yes, as long as it's respectful",
@@ -109,31 +109,31 @@ export const questions = [
     correctAnswer: "In the open-source chat",
   },
   // {
-    //   id: 11,
-    //   question: "What format should your Telegram name follow?",
-    //   options: [
+  //   id: 11,
+  //   question: "What format should your Telegram name follow?",
+  //   options: [
   //     "Firstname Lastname in Latin using default font",
   //     "Emoji + Nickname",
   //     "Surname Firstname in Cyrillic",
   //   ],
   //   correctAnswer: "Firstname Lastname in Latin using default font",
   // },
+  {
+    id: 12,
+    question: "Is it required to have a Telegram username?",
+    options: [
+      "Yes, for easier tagging and communication",
+      "No, it’s optional",
+      "Only if you're an admin",
+    ],
+    correctAnswer: "Yes, for easier tagging and communication",
+  },
   // {
-    //   id: 12,
-  //   question: "Is it required to have a Telegram username?",
-  //   options: [
-  //     "Yes, for easier tagging and communication",
-  //     "No, it’s optional",
-  //     "Only if you're an admin",
-  //   ],
-  //   correctAnswer: "Yes, for easier tagging and communication",
-  // },
-  // {
-    //   id: 13,
+  //   id: 13,
   //   question: "What is 'Bazaar Day' in the UZ IT COMMUNITY chat?",
   //   options: [
-    //     "A day to share your projects or social media links",
-    //     "A day to buy and sell gadgets",
+  //     "A day to share your projects or social media links",
+  //     "A day to buy and sell gadgets",
   //     "A community hackathon day",
   //   ],
   //   correctAnswer: "A day to share your projects or social media links",
@@ -198,7 +198,7 @@ export const explanations = {
   4: "Only events co-organized by the IT Community or approved by Shavkat aka may be posted. P.S. we have an open-source chat where you can post whatever you want 😉(within ethical limits).",
   5: "You may only post vacancies with Shavkat aka's permission or if they are exclusive to IT Community volunteers.",
   6: "Only admins can add members. Others must contact admins for the selection process. You may contact Shavkat aka(@pulsopros) or @robiya_py, @OmgSoftCode, @camocec, @T_Shamsiddin, @smart_proger_go, @aleeeeeshka, @Fhfnndju, @Gulisa_Ibragimova, @nozima_sharifova and @MSA1005 they will do the selecting process and add your friend to the group.",
-  7: "Congratulating for birthdays/holidays floods the chat — instead, use the open-source chat.",
+  // 7: "Congratulating for birthdays/holidays floods the chat — instead, use the open-source chat.",
   8: "Avoid politics, religion, or private topics. The focus is on team-related and relevant discussion.",
   9: "Yes, there are official rules that apply to both the community and this volunteer group.",
   10: "Use the open-source chat to post anything (within ethical limits).",
@@ -208,6 +208,6 @@ export const explanations = {
   // 14: "Keling Tanishaylik is a networking bot for volunteers to connect online or in-person. Every week (sometimes once in 2-3 weeks) Shavkat aka(@pulsopros) launches the bot which matches a team of people together, they then should meet and connect with each other in-person or online (Zoom, Google Meets etc.).",
   // 15: "To join, vote in the weekly poll and press 'start' in the bot. Do not delete the bot chat. We even have special sticker for it!",
   // 16: "Your display name must follow 'Firstname Lastname' in Latin, using default font.",
-  // 17: "A username is required for easier communication and tagging. Many volunteers use 2 TG accounts.",
+  12: "A username is required for easier communication and tagging. Many volunteers use 2 TG accounts.",
   // 18: "Bazaar Day is the last Sunday of the month when you can promote your personal content.",
 };
