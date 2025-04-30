@@ -7,7 +7,7 @@ export default function MusicToggle() {
   const isMobile = useIsMobile(); 
   const { isMuted, setMuted, audioRef } = useAudioStore();
 
-  if (isMobile) return null; 
+  // if (isMobile) return null; 
 
   const toggleMute = () => {
     if (!audioRef) return;

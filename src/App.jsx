@@ -1,23 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Welcome from "./screens/Welcome";
 import Rules from "./screens/Rules";
 import Final from "./screens/Final";
 import AudioPlayer from "./components/AudioPlayer";
-import { Questions } from "./screens/Questions";
 import EnableMusicToast from "./components/EnableMusicToast";
-import { useAudioStore } from "./store/useAudioStore";
 import TryAgain from "./screens/TryAgain";
+import { Questions } from "./screens/Questions";
+import { useAudioStore } from "./store/useAudioStore";
 
 function App() {
+  const { audioStarted, setShowEnableToast } = useAudioStore();
 
-  const { showEnableToast } = useAudioStore();
+  useEffect(() => {
+    if (!audioStarted) {
+      setShowEnableToast(true); // 👈 show toast manually
+    }
+  }, [audioStarted, setShowEnableToast]);
+
   return (
     <>
       <AudioPlayer />
-
-      {showEnableToast && <EnableMusicToast />}
-
+      <EnableMusicToast />
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/rules" element={<Rules />} />
@@ -26,7 +30,6 @@ function App() {
         <Route path="/tryagain" element={<TryAgain />} />
       </Routes>
     </>
-
   );
 }
 
